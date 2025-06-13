@@ -5,120 +5,121 @@
     <title>My Data Visualization Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        h1, h2, h3, h4, h5, h6,
-        .segment-title,
-        .chart-title,
-        .tools-used-title {
-            font-family: 'Helvetica Neue', Helvetica, 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-            letter-spacing: 0.02em;
-        }
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: #f8f8f8;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background: #ff8000;
-            padding: 2rem 1rem 1rem;
-            text-align: center;
-        }
-        header h1 {
-            color: #fff;
-            font-size: 2.5rem;
-            font-family: 'Helvetica Neue', Helvetica, 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-            letter-spacing: 0.04em;
-            margin-bottom: 0.3em;
-        }
-        .intro-section {
-            max-width: 750px;
-            margin: 1.5rem auto 2.5rem auto;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-            padding: 1.5rem;
-            font-size: 1.09rem;
-            color: #333;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto 2rem;
-            padding: 0 1rem;
-        }
-        .segment {
-            background: #fff;
-            border-radius: 14px;
-            box-shadow: 0 2px 14px rgba(255,128,0,0.10);
-            margin-bottom: 2.5rem;
-            padding: 2rem 1.5rem 1.5rem;
-            border: 2.5px solid #ff8000;
-        }
-        .segment-title {
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: #ff8000;
-            margin-bottom: 0.7rem;
-        }
-        .segment-desc {
-            color: #555;
-            font-size: 1.09rem;
-            margin-bottom: 2.2rem;
-        }
-        .chart-section {
-            background: #f8f8f8;
-            border-radius: 10px;
-            box-shadow: 0 2px 12px rgba(255,128,0,0.04);
-            margin-bottom: 2.5rem;
-            padding: 2rem 1.5rem 1.5rem;
-        }
-        .chart-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #ff8000;
-            margin-bottom: 1.1rem;
-        }
-        .chart-img-wrapper {
-            text-align: center;
-            margin-bottom: 1.3rem;
-        }
-        .chart-img-wrapper img {
-            max-width: 96%;
-            height: auto;
-            border-radius: 6px;
-            box-shadow: 0 1px 3px rgba(36,48,94,0.11);
-        }
-        .chart-story {
-            font-size: 1.08rem;
-            color: #444;
-            margin-bottom: 1.3rem;
-        }
-        .tools-used {
-            background: #f3f6fb;
-            border-left: 4px solid #ff8000;
-            margin: 1.2rem 0 0.5rem;
-            padding: 0.9rem 1.2rem;
-            border-radius: 5px;
-            font-size: 1rem;
-            color: #222;
-        }
-        .tools-used-title {
-            font-weight: 600;
-            color: #ff8000;
-            margin-bottom: 0.3rem;
-            font-size: 1.07rem;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-        }
-        .flourish-embed {
-            margin: 2rem 0;
-        }
-        @media (max-width: 600px) {
-            .container, .intro-section, .segment, .chart-section { padding: 0.7rem; }
-            .chart-section { padding-top: 1.2rem; }
-            header h1 { font-size: 1.5rem; }
-            .segment-title { font-size: 1.25rem; }
-        }
-    </style>
+    h1, h2, h3, h4, h5, h6,
+    .segment-title,
+    .chart-title,
+    .tools-used-title {
+        font-family: 'Helvetica Neue', Helvetica, 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+        letter-spacing: 0.02em;
+    }
+    body {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background: #f8f8f8;
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        background: #ff8000;
+        padding: 2rem 1rem 1rem;
+        text-align: center;
+    }
+    header h1 {
+        color: #fff;
+        font-size: 2.5rem;
+        font-family: 'Helvetica Neue', Helvetica, 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+        letter-spacing: 0.04em;
+        margin-bottom: 0.3em;
+    }
+    .intro-section {
+        max-width: 750px;
+        margin: 1.5rem auto 2.5rem auto;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        padding: 1.5rem;
+        font-size: 1.09rem;
+        color: #333;
+    }
+    .container {
+        max-width: 800px;
+        margin: 0 auto 2rem;
+        padding: 0 1rem;
+    }
+    .segment {
+        background: #fff;
+        border-radius: 14px;
+        box-shadow: 0 2px 14px rgba(255,128,0,0.10);
+        margin-bottom: 2.5rem;
+        padding: 2rem 1.5rem 1.5rem;
+        border: 2.5px solid #ff8000;
+    }
+    .segment-title {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #ff8000;
+        margin-bottom: 0.7rem;
+    }
+    .segment-desc {
+        color: #555;
+        font-size: 1.09rem;
+        margin-bottom: 2.2rem;
+    }
+    .chart-section {
+        background: #f8f8f8;
+        border-radius: 10px;
+        box-shadow: 0 2px 12px rgba(255,128,0,0.04);
+        margin-bottom: 2.5rem;
+        padding: 2rem 1.5rem 1.5rem;
+    }
+    .chart-title {
+        font-size: 1.45rem;
+        font-weight: 700;
+        color: #000;
+        margin-bottom: 1.1rem;
+    }
+    .chart-img-wrapper {
+        text-align: center;
+        margin-bottom: 1.3rem;
+    }
+    .chart-img-wrapper img {
+        max-width: 96%;
+        height: auto;
+        border-radius: 6px;
+        box-shadow: 0 1px 3px rgba(36,48,94,0.11);
+    }
+    .chart-story {
+        font-size: 1.08rem;
+        color: #444;
+        margin-bottom: 1.3rem;
+    }
+    .tools-used {
+        background: #f3f6fb;
+        border-left: 4px solid #ff8000;
+        margin: 1.2rem 0 0.5rem;
+        padding: 0.9rem 1.2rem;
+        border-radius: 5px;
+        font-size: 1rem;
+        color: #222;
+    }
+    .tools-used-title {
+        font-weight: 600;
+        color: #ff8000;
+        margin-bottom: 0.3rem;
+        font-size: 1.07rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+    }
+    .flourish-embed {
+        margin: 2rem 0;
+    }
+    @media (max-width: 600px) {
+        .container, .intro-section, .segment, .chart-section { padding: 0.7rem; }
+        .chart-section { padding-top: 1.2rem; }
+        header h1 { font-size: 1.5rem; }
+        .segment-title { font-size: 1.25rem; }
+    }
+</style>
+    
 </head>
 <body>
     <header>
