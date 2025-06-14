@@ -1,164 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>My Data Visualization Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
+    <meta charset="UTF-8">
+    <title>My Data Visualization Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
     h1, h2, h3, h4, h5, h6,
     .segment-title,
     .chart-title,
     .tools-used-title {
-      font-family: 'Helvetica Neue', Helvetica, 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-      letter-spacing: 0.02em;
+        font-family: 'Helvetica Neue', Helvetica, 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+        letter-spacing: 0.02em;
     }
     body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: #f8f8f8;
-      margin: 0;
-      padding: 0;
-      font-size: 1.08rem;
-      color: #333;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background: #f8f8f8;
+        margin: 0;
+        padding: 0;
+        font-size: 1.08rem;
+        color: #333;
     }
     header {
-      background: #ff8000;
-      padding: 2rem 1rem 1rem;
-      text-align: center;
+        background: #ff8000;
+        padding: 2rem 1rem 1rem;
+        text-align: center;
     }
     header h1 {
-      color: #fff;
-      font-size: 2.5rem;
-      font-family: 'Helvetica Neue', Helvetica, 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-      letter-spacing: 0.04em;
-      margin-bottom: 0.3em;
+        color: #fff;
+        font-size: 2.5rem;
+        font-family: 'Helvetica Neue', Helvetica, 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+        letter-spacing: 0.04em;
+        margin-bottom: 0.3em;
     }
     .intro-section {
-      max-width: 750px;
-      margin: 1.5rem auto 2.5rem auto;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-      padding: 1.5rem;
+        max-width: 750px;
+        margin: 1.5rem auto 2.5rem auto;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        padding: 1.5rem;
     }
     .container {
-      max-width: 800px;
-      margin: 0 auto 2rem;
-      padding: 0 1rem;
+        max-width: 800px;
+        margin: 0 auto 2rem;
+        padding: 0 1rem;
     }
     .segment-intro-highlight {
-    background: #ff8000;
-    border-radius: 16px;
-    border: 3px solid #ff8000;
-    box-shadow: none;
-    padding: 2.3rem 2.1rem 2.3rem 2.1rem;
-    margin-bottom: 2.5rem;
-    max-width: 99vw;
-}
-.segment-intro-title {
-    font-family: 'Helvetica Neue', Helvetica, Arial, 'Arial Nova', 'Nimbus Sans', sans-serif;
-    font-size: 2.1rem;
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 1.1rem;
-    line-height: 1.15;
-    letter-spacing: 0.01em;
-}
-.segment-intro-desc {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    font-size: 1.08rem;
-    color: #111;
-    line-height: 1.5;
-    margin-bottom: 0;
-    margin-top: 0;
-    font-weight: 600; /* Boldened body text */
-}    
+        background: #fff;
+        border-radius: 16px;
+        border: 3px solid #ff8000;
+        box-shadow: none;
+        padding: 2.3rem 2.1rem 2.3rem 2.1rem;
+        margin-bottom: 2.5rem;
+        max-width: 99vw;
+    }
+    .segment-intro-title {
+        font-family: 'Helvetica Neue', Helvetica, Arial, 'Arial Nova', 'Nimbus Sans', sans-serif;
+        font-size: 2.1rem;
+        font-weight: 700;
+        color: #ff8000;
+        margin-bottom: 1.1rem;
+        line-height: 1.15;
+        letter-spacing: 0.01em;
+    }
+    .segment-intro-desc {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        font-size: 1.08rem;
+        color: #4a565e;
+        line-height: 1.5;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+    /* Black enclosure for charts */
     .segment-big-chart-enclosure {
-      background: #fff;
-      border-radius: 18px;
-      box-shadow: 0 2px 20px rgba(36,48,94,0.12);
-      border: 4px solid #111;
-      margin: 3rem auto 1.1rem auto;
-      padding: 2.5rem 2rem 2.5rem;
-      max-width: 950px;
-      width: 98vw;
-      min-width: 320px;
+        background: #fff;
+        border-radius: 18px;
+        box-shadow: 0 2px 20px rgba(36,48,94,0.12);
+        border: 4px solid #111;
+        margin: 3rem auto 1.1rem auto;
+        padding: 2.5rem 2rem 2.5rem;
+        max-width: 950px;
+        width: 98vw;
+        min-width: 320px;
     }
     .chart-title-big {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #222;
-      margin-bottom: 1.2rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #222;
+        margin-bottom: 1.2rem;
     }
     .chart-img-wrapper {
-      text-align: center;
-      margin-bottom: 1.3rem;
+        text-align: center;
+        margin-bottom: 1.3rem;
     }
     .chart-img-wrapper img {
-      max-width: 96%;
-      height: auto;
-      border-radius: 6px;
-      box-shadow: 0 1px 3px rgba(36,48,94,0.11);
-      display: block;
-      margin: 0 auto;
+        max-width: 96%;
+        height: auto;
+        border-radius: 6px;
+        box-shadow: 0 1px 3px rgba(36,48,94,0.11);
+        display: block;
+        margin: 0 auto;
     }
     .chart-img-wrapper iframe {
-      width: 100%;
-      height: 480px;
-      max-width: 900px;
-      border: none;
-      border-radius: 8px;
-      box-shadow: 0 1px 3px rgba(36,48,94,0.11);
-      display: block;
-      margin: 0 auto;
-      background: #fff;
+        width: 100%;
+        height: 480px;
+        max-width: 900px;
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(36,48,94,0.11);
+        display: block;
+        margin: 0 auto;
+        background: #fff;
     }
+    /* Orange explanation enclosures */
     .segment-explain {
-      margin-top: 0;
-      margin-bottom: 2.5rem;
-      background: #fff;
-      border-radius: 14px;
-      box-shadow: 0 2px 14px rgba(255,128,0,0.10);
-      border: 2.5px solid #ff8000;
-      padding: 2rem 1.5rem 1.5rem;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
+        margin-top: 0;
+        margin-bottom: 2.5rem;
+        background: #fff;
+        border-radius: 14px;
+        box-shadow: 0 2px 14px rgba(255,128,0,0.10);
+        border: 2.5px solid #ff8000;
+        padding: 2rem 1.5rem 1.5rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
     }
     .explain-body {
-      font-size: 1.08rem;
-      color: #444;
-      line-height: 1.5;
-      margin-bottom: 1.3rem;
+        font-size: 1.08rem;
+        color: #444;
+        line-height: 1.5;
+        margin-bottom: 1.3rem;
     }
     .tools-used {
-      background: #f3f6fb;
-      border-left: 4px solid #ff8000;
-      margin: 1.2rem 0 0.5rem;
-      padding: 0.9rem 1.2rem;
-      border-radius: 5px;
-      font-size: 1.08rem;
-      color: #222;
+        background: #f3f6fb;
+        border-left: 4px solid #ff8000;
+        margin: 1.2rem 0 0.5rem;
+        padding: 0.9rem 1.2rem;
+        border-radius: 5px;
+        font-size: 1.08rem;
+        color: #222;
     }
     .tools-used-title {
-      font-weight: 600;
-      color: #ff8000;
-      margin-bottom: 0.3rem;
-      font-size: 1.07rem;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
+        font-weight: 600;
+        color: #ff8000;
+        margin-bottom: 0.3rem;
+        font-size: 1.07rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
     }
     .segment-desc {
-      font-size: 1.08rem;
-      color: #444;
-      line-height: 1.5;
+        font-size: 1.08rem;
+        color: #444;
+        line-height: 1.5;
     }
     @media (max-width: 1000px) {
       .segment-big-chart-enclosure { max-width: 99vw; }
       .chart-img-wrapper iframe { max-width: 99vw; }
     }
     @media (max-width: 900px) {
-      .container, .intro-section, .segment-intro-highlight, .segment-explain, .segment, .chart-section { padding: 0.7rem; }
-      .segment-big-chart-enclosure { padding: 1rem 0.3rem 1.2rem; }
+        .container, .intro-section, .segment-intro-highlight, .segment-explain, .segment, .chart-section { padding: 0.7rem; }
+        .segment-big-chart-enclosure { padding: 1rem 0.3rem 1.2rem; }
     }
     @media (max-width: 700px) {
       .segment-intro-title { font-size: 1.35rem; }
@@ -166,181 +167,133 @@
       .segment-intro-highlight { padding: 1.2rem 0.6rem 1.2rem 0.6rem; }
     }
     @media (max-width: 600px) {
-      .chart-img-wrapper iframe { height: 250px; }
+        .chart-img-wrapper iframe { height: 250px; }
     }
-
-    footer {
-      background-color: #111;
-      color: #fff;
-      text-align: center;
-      padding: 1.2rem 0;
-      font-size: 0.95rem;
-      margin-top: 3rem;
-    }
-
-    #scrollTopBtn {
-      display: none;
-      position: fixed;
-      bottom: 25px;
-      right: 30px;
-      z-index: 99;
-      font-size: 18px;
-      border: none;
-      outline: none;
-      background-color: #ff8000;
-      color: white;
-      cursor: pointer;
-      padding: 10px 15px;
-      border-radius: 6px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    }
-
-    #scrollTopBtn:hover {
-      background-color: #e07000;
-    }
-  </style>
+    </style>
 </head>
 <body>
-
 <header>
-  <h1>My Data Visualization Portfolio</h1>
+    <h1>My Data Visualization Portfolio</h1>
 </header>
-
 <div class="intro-section">
-  <p>
-    Welcome to my portfolio of data visualizations. Here, I present a selection of charts that reflect my approach to turning raw data into meaningful stories. Each visualization is accompanied by a narrative that explains its context, purpose, and the insights it reveals.
-  </p>
+    <p>
+        Welcome to my portfolio of data visualizations. Here, I present a selection of charts that reflect my approach to turning raw data into meaningful stories. Each visualization is accompanied by a narrative that explains its context, purpose, and the insights it reveals.
+    </p>
 </div>
-
 <div class="container">
-  <section class="segment-intro-highlight">
-    <div class="segment-intro-title">India’s Telecom Story: Growth, Pricing and the 5G Shift</div>
-    <div class="segment-intro-desc">
-      This segment captures major trends shaping India’s telecom sector—from competitive dynamics and market consolidation to tariff changes and data usage growth driven by 5G. These charts explore how customer behavior and corporate strategy have evolved post-Jio's entry and in the wake of new technological rollouts.
-    </div>
-  </section>
+    <!-- FIRST ORANGE ENCLOSURE (intro) -->
+    <section class="segment-intro-highlight">
+        <div class="segment-intro-title">
+            India’s Telecom Story: Growth, Pricing and the 5G Shift
+        </div>
+        <div class="segment-intro-desc">
+            This segment captures major trends shaping India’s telecom sector—from competitive dynamics and market consolidation to tariff changes and data usage growth driven by 5G. These charts explore how customer behavior and corporate strategy have evolved post-Jio's entry and in the wake of new technological rollouts.
+        </div>
+    </section>
 </div>
 
-<!-- Chart 1 -->
+<!-- 1st chart: Chart.js area chart (iframe) -->
 <div class="segment-big-chart-enclosure">
-  <div class="chart-title chart-title-big">How India’s Telecom Sector Consolidated Since 2016</div>
-  <div class="chart-img-wrapper">
-    <canvas id="telcoConsolidationChart" width="800" height="400"></canvas>
-  </div>
+    <div class="chart-title chart-title-big">Market Share of Indian Telcos (2023)</div>
+    <iframe 
+        src="https://ajententerprises.github.io/Aleef-s-Data-Portfolio/area_stacked%20copy%203.html"
+        style="width: 100%; height: 480px; border: none; display: block; margin: 0 auto; background: #fff;"
+        allowfullscreen
+        loading="lazy"
+        title="Market Share of Indian Telcos (2023)">
+    </iframe>
 </div>
 <div class="container">
-  <section class="segment-explain">
-    <div class="explain-body">
-      This area chart traces the transformation of India's telecom landscape, beginning with the intense disruption caused by Jio’s entry in 2016. Within a few years, the market consolidated around three major players—Jio, Airtel, and Vi—as smaller firms exited or merged. The consolidation not only reshaped competition but also influenced pricing and investment patterns.
-    </div>
-    <div class="tools-used">
-      <span class="tools-used-title">TOOLS USED:</span><br>
-      Chart.js, custom annotations, HTML/CSS
-    </div>
-  </section>
+    <section class="segment-explain">
+        <div class="explain-body">
+            This area chart visualizes the shifting market share among India's major telecom operators since the Vodafone-Idea merger in 2018. It reveals how Jio and Airtel have steadily captured more subscribers, while Vodafone Idea (Vi) has seen a significant drop in its user base. The chart underscores the impact of aggressive pricing strategies, network investments, and industry consolidation on subscriber dynamics. Ultimately, it highlights the competitive pressures and consumer choices that continue to reshape India's telecom landscape.
+        </div>
+        <div class="tools-used">
+            <span class="tools-used-title">TOOLS USED:</span><br>
+            Chart.js, HTML, TRAI Data
+        </div>
+    </section>
 </div>
 
-<!-- Chart 2 -->
+<!-- 2nd chart: Tariff Revisions by Telcos (PNG) -->
 <div class="segment-big-chart-enclosure">
-  <div class="chart-title chart-title-big">Mobile Tariff Trends Since Jio's Entry</div>
-  <div class="chart-img-wrapper">
-    <img src="chart-tariff-trends.png" alt="Mobile Tariff Trends Chart">
-  </div>
+    <div class="chart-title chart-title-big">Tariff Revisions by Telcos Over Time</div>
+    <div class="chart-img-wrapper">
+        <img src="tariff final-01.png" alt="Tariff Revisions by Telcos">
+    </div>
 </div>
 <div class="container">
-  <section class="segment-explain">
-    <div class="explain-body">
-      This line chart shows how prepaid mobile recharge prices in India have changed since 2018. The story begins with Jio’s entry in 2016, which disrupted the market by offering ultra-cheap data plans. Older telecom companies had to slash their own prices to stay competitive, leading to a period of intense price wars and declining revenues. By late 2019, however, the remaining players—Jio, Airtel, and Vi—began hiking tariffs in a coordinated manner to boost profitability.
-    </div>
-    <div class="tools-used">
-      <span class="tools-used-title">TOOLS USED:</span><br>
-      Google Sheets, Adobe Illustrator
-    </div>
-  </section>
+    <section class="segment-explain">
+        <div class="explain-body">
+            This line graph tracks key tariff hikes by India’s major telcos since Jio’s market entry. It highlights three major rounds of price revisions that reset the baseline for ARPU (Average Revenue Per User) in the industry.
+        </div>
+        <div class="tools-used">
+            <span class="tools-used-title">TOOLS USED:</span><br>
+            Illustrator, Company Filings
+        </div>
+    </section>
 </div>
 
-<!-- Chart 3 -->
+<!-- 3rd chart: Mobile Data Usage After 5G Rollout (PNG) -->
 <div class="segment-big-chart-enclosure">
-  <div class="chart-title chart-title-big">India's Soaring Mobile Data Usage</div>
-  <div class="chart-img-wrapper">
-    <img src="chart-data-usage.png" alt="Data Usage Growth Chart">
-  </div>
+    <div class="chart-title chart-title-big">Mobile Data Usage After 5G Rollout</div>
+    <div class="chart-img-wrapper">
+        <img src="telcos data usage with 5g rollout-01.png" alt="5G Data Usage Growth">
+    </div>
 </div>
 <div class="container">
-  <section class="segment-explain">
-    <div class="explain-body">
-      The bar chart shows the explosion in mobile data consumption in India from 2016 to 2023. Jio’s free and cheap data kickstarted a data revolution, making India the world’s largest consumer of mobile data. Even with rising tariffs, per-user data consumption has continued to climb—partly due to video-heavy platforms like YouTube and Instagram and the rollout of 5G in select cities.
-    </div>
-    <div class="tools-used">
-      <span class="tools-used-title">TOOLS USED:</span><br>
-      Datawrapper, custom annotations
-    </div>
-  </section>
+    <section class="segment-explain">
+        <div class="explain-body">
+            This chart shows quarterly mobile data consumption in India, highlighting the surge after the 5G launch. Jio and Airtel dominate data usage, reflecting customer uptake and expanding network coverage.
+        </div>
+        <div class="tools-used">
+            <span class="tools-used-title">TOOLS USED:</span><br>
+            Excel, Illustrator
+        </div>
+    </section>
 </div>
 
-<!-- Chart 4 -->
+<!-- 4th chart: TV Ad Revenue Growth (PNG) -->
 <div class="segment-big-chart-enclosure">
-  <div class="chart-title chart-title-big">5G Rollout: Where Each Telco Stands</div>
-  <div class="chart-img-wrapper">
-    <img src="chart-5g-rollout.png" alt="5G Rollout Status Chart">
-  </div>
+    <div class="chart-title chart-title-big">Ad Revenue Growth Across Broadcasters</div>
+    <div class="chart-img-wrapper">
+        <img src="ad rev-01.png" alt="TV Ad Revenue Growth">
+    </div>
 </div>
 <div class="container">
-  <section class="segment-explain">
-    <div class="explain-body">
-      This stacked column chart shows the 5G rollout status across different telecom circles in India. Airtel’s approach has focused on major cities first, while Jio’s standalone 5G is being pushed to more areas. Vodafone Idea, constrained by debt, lags behind significantly, highlighting how financial health directly impacts technology adoption.
-    </div>
-    <div class="tools-used">
-      <span class="tools-used-title">TOOLS USED:</span><br>
-      Adobe Illustrator, TRAI dataset
-    </div>
-  </section>
+    <section class="segment-explain">
+        <div class="explain-body">
+            This bar chart compares ad revenue growth across India's major TV broadcasters from FY21 to FY23. Star and Zee show notable rebounds, signaling a return in advertiser confidence.
+        </div>
+        <div class="tools-used">
+            <span class="tools-used-title">TOOLS USED:</span><br>
+            Excel, BARC India data
+        </div>
+    </section>
 </div>
 
-<!-- Chart 5 (Flourish embed) -->
+<!-- 5th chart: Flourish embed -->
 <div class="segment-big-chart-enclosure">
-  <div class="chart-title chart-title-big">A Race Against Time—and Inequality</div>
-  <div class="chart-img-wrapper">
-    <div class="flourish-embed flourish-bar-chart-race" data-src="visualisation/6689841">
-      <script src="https://public.flourish.studio/resources/embed.js"></script>
-      <noscript>
-        <img src="https://public.flourish.studio/visualisation/6689841/thumbnail" width="100%" alt="bar-chart-race visualization" />
-      </noscript>
+    <div class="chart-title chart-title-big">A Race Against Time—and Inequality</div>
+    <div class="chart-img-wrapper">
+        <div class="flourish-embed flourish-bar-chart-race" data-src="visualisation/6689841">
+            <script src="https://public.flourish.studio/resources/embed.js"></script>
+            <noscript>
+                <img src="https://public.flourish.studio/visualisation/6689841/thumbnail" width="100%" alt="bar-chart-race visualization" />
+            </noscript>
+        </div>
     </div>
-  </div>
 </div>
 <div class="container">
-  <section class="segment-explain">
-    <div class="explain-body">
-      This animated bar chart race tracks the percentage of population fully vaccinated in various countries until July 2021. It highlights how high-income countries surged ahead early, leaving others behind. The widening gap reflects the systemic inequality in global health access.
-    </div>
-    <div class="tools-used">
-      <span class="tools-used-title">TOOLS USED:</span><br>
-      Flourish
-    </div>
-  </section>
+    <section class="segment-explain">
+        <div class="explain-body">
+            This animated bar chart race tracks the percentage of population fully vaccinated in various countries until July 2021. It highlights how high-income countries surged ahead early, leaving others behind. The widening gap reflects the systemic inequality in global health access.
+        </div>
+        <div class="tools-used">
+            <span class="tools-used-title">TOOLS USED:</span><br>
+            Flourish
+        </div>
+    </section>
 </div>
-
-<footer>
-  &copy; 2025 Aleef Jahan. All rights reserved.
-</footer>
-
-<button onclick="topFunction()" id="scrollTopBtn" title="Go to top">↑ Top</button>
-
-<script>
-  const scrollTopBtn = document.getElementById("scrollTopBtn");
-  window.onscroll = function () {
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-      scrollTopBtn.style.display = "block";
-    } else {
-      scrollTopBtn.style.display = "none";
-    }
-  };
-  function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  }
-</script>
-
 </body>
 </html>
