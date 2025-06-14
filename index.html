@@ -1,243 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>My Data Visualization Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-    h1, h2, h3, h4, h5, h6,
-    .segment-title,
-    .chart-title,
-    .tools-used-title {
-        font-family: 'Helvetica Neue', Helvetica, 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-        letter-spacing: 0.02em;
-    }
+  <meta charset="UTF-8" />
+  <title>Telco Market Share</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
     body {
-        font-family: 'Segoe UI', Arial, sans-serif;
-        background: #f8f8f8;
-        margin: 0;
-        padding: 0;
+      margin: 28px;
+      font-family: Helvetica, Arial, sans-serif;
+      max-width: 980px;
+      position: relative;
     }
-    header {
-        background: #ff8000;
-        padding: 2rem 1rem 1rem;
-        text-align: center;
+    .headline {
+      font-family: 'Helvetica Rounded', 'Arial Rounded MT Bold', Arial, sans-serif;
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      margin-left: 40px;
     }
-    header h1 {
-        color: #fff;
-        font-size: 2.5rem;
-        font-family: 'Helvetica Neue', Helvetica, 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-        letter-spacing: 0.04em;
-        margin-bottom: 0.3em;
+    .subhead {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 15px;
+      font-weight: normal;
+      margin-bottom: 10px;
+      max-width: 700px;
+      margin-left: 40px;
     }
-    .intro-section {
-        max-width: 750px;
-        margin: 1.5rem auto 2.5rem auto;
-        background: #fff;
-        border-radius: 10px;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-        padding: 1.5rem;
-        font-size: 1.09rem;
-        color: #333;
+    .caption {
+      font-family: Helvetica, Arial, sans-serif;
+      font-weight: bold;
+      font-size: 13px;
+      margin-bottom: 22px;
+      margin-left: 40px;
     }
-    .container {
-        max-width: 800px;
-        margin: 0 auto 2rem;
-        padding: 0 1rem;
+    .chart-wrapper {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      position: relative;
     }
-    .segment {
-        background: #fff;
-        border-radius: 14px;
-        box-shadow: 0 2px 14px rgba(255,128,0,0.10);
-        margin-bottom: 2.5rem;
-        padding: 2rem 1.5rem 1.5rem;
-        border: 2.5px solid #ff8000;
+    canvas {
+      width: 850px !important;
+      height: 470px !important;
     }
-    .segment-title {
-        font-size: 1.6rem;
-        font-weight: 700;
-        color: #ff8000;
-        margin-bottom: 0.7rem;
+    .label {
+      position: absolute;
+      font-weight: bold;
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 13px;
+      pointer-events: none;
     }
-    .segment-desc {
-        color: #555;
-        font-size: 1.09rem;
-        margin-bottom: 2.2rem;
+    .label.jio {
+      top: 180px;
+      left: 840px;
+      color: rgba(25, 25, 112, 0.95);
     }
-    .chart-section {
-        background: #f8f8f8;
-        border-radius: 10px;
-        box-shadow: 0 2px 12px rgba(255,128,0,0.04);
-        margin-bottom: 2.5rem;
-        padding: 2rem 1.5rem 1.5rem;
+    .label.voda {
+      top: 322px;
+      left: 840px;
+      color: rgba(255, 165, 0, 0.9);
     }
-    .chart-title {
-        font-size: 1.45rem;
-        font-weight: 700;
-        color: #000;
-        margin-bottom: 1.1rem;
+    .label.airtel {
+      top: 400px;
+      left: 840px;
+      color: rgba(255, 0, 0, 0.9);
     }
-    .chart-img-wrapper {
-        text-align: center;
-        margin-bottom: 1.3rem;
-    }
-    .chart-img-wrapper img {
-        max-width: 96%;
-        height: auto;
-        border-radius: 6px;
-        box-shadow: 0 1px 3px rgba(36,48,94,0.11);
-    }
-    .chart-img-wrapper iframe {
-        width: 100%;
-        height: 600px;
-        border: none;
-        border-radius: 6px;
-        box-shadow: 0 1px 3px rgba(36,48,94,0.11);
-    }
-    .chart-story {
-        font-size: 1.08rem;
-        color: #444;
-        margin-bottom: 1.3rem;
-    }
-    .tools-used {
-        background: #f3f6fb;
-        border-left: 4px solid #ff8000;
-        margin: 1.2rem 0 0.5rem;
-        padding: 0.9rem 1.2rem;
-        border-radius: 5px;
-        font-size: 1rem;
-        color: #222;
-    }
-    .tools-used-title {
-        font-weight: 600;
-        color: #ff8000;
-        margin-bottom: 0.3rem;
-        font-size: 1.07rem;
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
-    }
-    .flourish-embed {
-        margin: 2rem 0;
-    }
-    @media (max-width: 600px) {
-        .container, .intro-section, .segment, .chart-section { padding: 0.7rem; }
-        .chart-section { padding-top: 1.2rem; }
-        header h1 { font-size: 1.5rem; }
-        .segment-title { font-size: 1.25rem; }
-    }
-</style>
-    
+  </style>
 </head>
 <body>
-    <header>
-        <h1>My Data Visualization Portfolio</h1>
-    </header>
-    <div class="intro-section">
-        <p>
-            Welcome to my portfolio of data visualizations. Here, I present a selection of charts that reflect my approach to turning raw data into meaningful stories. Each visualization is accompanied by a narrative that explains its context, purpose, and the insights it reveals.
-        </p>
-    </div>
-    <div class="container">
 
-        <!-- Segment 1: Telecom -->
-        <section class="segment">
-            <div class="segment-title">India’s Telecom Story: Growth, Pricing and the 5G Shift</div>
-            <div class="segment-desc">
-                This segment captures major trends shaping India’s telecom sector—from competitive dynamics and market consolidation to tariff changes and data usage growth driven by 5G. These charts explore how customer behavior and corporate strategy have evolved post-Jio's entry and in the wake of new technological rollouts.
-            </div>
+  <div class="headline">Jio, Airtel eating into Vodafone’s market share</div>
+  <div class="subhead">
+    The 2018 Vodafone-Idea merger failed to stem their subscriber bleed. Rivals Jio and Airtel have since gained users at the debt-ridden telco’s expense.
+  </div>
+  <div class="caption">Market share of Indian telcos since Vodafone-Idea merger</div>
 
-            <section class="chart-section">
-                <div class="chart-title">Market Share of Indian Telcos (2023)</div>
-               <div class="chart-img-wrapper" style="overflow: hidden;">
-    <iframe 
-        src="https://ajententerprises.github.io/Aleef-s-Data-Portfolio/area_stacked%20copy%203.html"
-        style="width: 100%; max-width: 860px; height: 580px; border: none; display: block; margin: 0 auto;">
-    </iframe>
-</div>
-                <div class="chart-story">
-                    This donut chart visualizes the wireless subscriber base distribution among India's major telecom players as of 2023. Jio continues to lead, followed by Airtel and Vi. The chart shows how consolidation and customer churn have reshaped market dynamics.
-                </div>
-                <div class="tools-used">
-                    <span class="tools-used-title">Tools Used:</span><br>
-                    Chart.js, HTML, TRAI Data
-                </div>
-            </section>
+  <div class="chart-wrapper">
+    <canvas id="telcoChart"></canvas>
+    <div class="label jio">Jio</div>
+    <div class="label voda">Vodafone Idea</div>
+    <div class="label airtel">Airtel</div>
+  </div>
 
-            <section class="chart-section">
-                <div class="chart-title">Tariff Revisions by Telcos Over Time</div>
-                <div class="chart-img-wrapper">
-                    <img src="tariff final-01.png" alt="Tariff Revisions by Telcos">
-                </div>
-                <div class="chart-story">
-                    This line graph tracks key tariff hikes by India’s major telcos since Jio’s market entry. It highlights three major rounds of price revisions that reset the baseline for ARPU (Average Revenue Per User) in the industry.
-                </div>
-                <div class="tools-used">
-                    <span class="tools-used-title">Tools Used:</span><br>
-                    Illustrator, Company Filings
-                </div>
-            </section>
+  <script>
+    const labels = [
+      "Q2 2019", "Q3 2019", "Q4 2019", "Q1 2020", "Q2 2020", "Q3 2020", "Q4 2020", 
+      "Q1 2021", "Q2 2021", "Q3 2021", "Q4 2021", "Q1 2022", "Q2 2022", "Q3 2022", 
+      "Q4 2022", "Q1 2023", "Q2 2023", "Q3 2023", "Q4 2023", "Q1 2024", "Q2 2024", 
+      "Q3 2024", "Q4 2024", "Q1 2025", "Q2 2025", "Q3 2025", "Q4 2025"
+    ];
 
-            <section class="chart-section">
-                <div class="chart-title">Mobile Data Usage After 5G Rollout</div>
-                <div class="chart-img-wrapper">
-                    <img src="telcos data usage with 5g rollout-01.png" alt="5G Data Usage Growth">
-                </div>
-                <div class="chart-story">
-                    This chart shows quarterly mobile data consumption in India, highlighting the surge after the 5G launch. Jio and Airtel dominate data usage, reflecting customer uptake and expanding network coverage.
-                </div>
-                <div class="tools-used">
-                    <span class="tools-used-title">Tools Used:</span><br>
-                    Excel, Illustrator
-                </div>
-            </section>
-        </section>
+    const data = {
+      labels: labels,
+      datasets: [
+        {
+          label: 'Airtel',
+          data: [332.8, 284.2, 282.6, 281.1, 279.4, 283, 283.7, 279.9, 293.7, 307.9, 321.4, 321.2, 323.5, 322.9, 326, 327, 328, 332, 335, 339, 342, 346, 352, 355, 352, 357, 362],
+          backgroundColor: 'rgba(255, 0, 0, 0.9)',
+          borderColor: 'rgba(255, 0, 0, 1)',
+          fill: true,
+          stack: 'stack1',
+          pointRadius: 0
+        },
+        {
+          label: 'Vodafone Idea',
+          data: [422, 387.2, 334.1, 320, 311, 304, 291.1, 279.8, 271.8, 269.8, 267.8, 255.4, 253, 247.2, 244, 240, 234, 229, 226, 221, 220, 215, 213, 210, 205, 200, 198.2],
+          backgroundColor: 'rgba(255, 165, 0, 0.9)',
+          borderColor: 'rgba(255, 165, 0, 1)',
+          fill: true,
+          stack: 'stack1',
+          pointRadius: 0
+        },
+        {
+          label: 'Jio',
+          data: [252.3, 280.1, 306.7, 331.3, 355.2, 370, 387.5, 398.3, 405.6, 410.8, 426.2, 440.6, 429.5, 421, 410, 420, 430, 433, 439, 449, 460, 471, 482, 490, 479, 482, 488],
+          backgroundColor: 'rgba(25, 25, 112, 0.95)',
+          borderColor: 'rgba(25, 25, 112, 1)',
+          fill: true,
+          stack: 'stack1',
+          pointRadius: 0
+        }
+      ]
+    };
 
-        <!-- Segment 2: Media Advertising -->
-        <section class="segment">
-            <div class="segment-title">TV Advertising in India: The Post-COVID Recovery</div>
-            <div class="segment-desc">
-                This chart focuses on advertising revenue growth for Indian television networks in the aftermath of the COVID-19 pandemic. It helps illustrate the pace of recovery across broadcasters and reflects how spending patterns evolved in response to audience behavior and economic reopening.
-            </div>
+    const config = {
+      type: 'line',
+      data: data,
+      options: {
+        responsive: false,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false }
+        },
+        interaction: {
+          mode: 'index',
+          intersect: false
+        },
+        scales: {
+          x: {
+            stacked: true,
+            ticks: {
+              font: { size: 12 },
+              maxRotation: 0,
+              minRotation: 0,
+              callback: function(_, index) {
+                return labels[index].includes("Q4") ? labels[index] : '';
+              }
+            }
+          },
+          y: {
+            stacked: true,
+            ticks: {
+              font: { size: 12 },
+              callback: function(value) {
+                if (value === 1200) return ['1200', 'mln users'];
+                return value;
+              }
+            },
+            suggestedMax: 1200,
+            title: { display: false }
+          }
+        }
+      }
+    };
 
-            <section class="chart-section">
-                <div class="chart-title">Ad Revenue Growth Across Broadcasters</div>
-                <div class="chart-img-wrapper">
-                    <img src="ad rev-01.png" alt="TV Ad Revenue Growth">
-                </div>
-                <div class="chart-story">
-                    This bar chart compares ad revenue growth across India's major TV broadcasters from FY21 to FY23. Star and Zee show notable rebounds, signaling a return in advertiser confidence.
-                </div>
-                <div class="tools-used">
-                    <span class="tools-used-title">Tools Used:</span><br>
-                    Excel, BARC India data
-                </div>
-            </section>
-        </section>
-
-        <!-- Segment 3: Flourish Chart -->
-        <section class="segment">
-            <div class="segment-title">Vaccine Inequality: How Rich Nations Raced Ahead in the Global Jab Drive</div>
-            <div class="segment-desc">
-                As COVID-19 vaccines began rolling out in early 2021, a striking gap emerged between wealthier nations and the rest of the world. While countries like the US, UK, and Israel rapidly immunised large parts of their population, many low-income nations were left behind—waiting for donations, approvals, or supplies. This segment visualises how the global vaccination effort unfolded in the first half of 2021, revealing stark disparities in access and pace.
-            </div>
-
-            <section class="chart-section">
-                <div class="chart-title">A Race Against Time—and Inequality</div>
-                <div class="chart-story">
-                    This animated bar chart race tracks the percentage of population fully vaccinated in various countries until July 2021. It highlights how high-income countries surged ahead early, leaving others behind. The widening gap reflects the systemic inequality in global health access.
-                </div>
-                <div class="flourish-embed flourish-bar-chart-race" data-src="visualisation/6689841">
-                    <script src="https://public.flourish.studio/resources/embed.js"></script>
-                    <noscript>
-                        <img src="https://public.flourish.studio/visualisation/6689841/thumbnail" width="100%" alt="bar-chart-race visualization" />
-                    </noscript>
-                </div>
-                <div class="tools-used">
-                    <span class="tools-used-title">Tools Used:</span><br>
-                    Flourish
-                </div>
-            </section>
-        </section>
-    </div>
+    new Chart(document.getElementById('telcoChart'), config);
+  </script>
 </body>
 </html>
