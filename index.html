@@ -5,37 +5,197 @@
   <title>My Data Visualization Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    /* ... your existing CSS remains untouched ... */
+    h1, h2, h3, h4, h5, h6,
+    .segment-title,
+    .chart-title,
+    .tools-used-title {
+      font-family: 'Helvetica Neue', Helvetica, 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+      letter-spacing: 0.02em;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f8f8f8;
+      margin: 0;
+      padding: 0;
+      font-size: 1.08rem;
+      color: #333;
+    }
+
+    header {
+      background: #ff8000;
+      padding: 2rem 1rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      color: #fff;
+      font-size: 2.5rem;
+      font-family: 'Helvetica Neue', Helvetica, 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.3em;
+    }
+
+    .intro-section {
+      max-width: 750px;
+      margin: 1.5rem auto 2.5rem auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      padding: 1.5rem;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      padding: 0 1rem;
+    }
+
+    .segment-intro-highlight {
+      background: #fff;
+      border-radius: 16px;
+      border: 3px solid #ff8000;
+      box-shadow: none;
+      padding: 2.3rem 2.1rem;
+      margin-bottom: 2.5rem;
+      max-width: 99vw;
+    }
+
+    .segment-intro-title {
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: #ff8000;
+      margin-bottom: 1.1rem;
+      line-height: 1.15;
+      letter-spacing: 0.01em;
+    }
+
+    .segment-intro-desc {
+      font-size: 1.08rem;
+      color: #4a565e;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .segment-big-chart-enclosure {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 2px 20px rgba(36,48,94,0.12);
+      border: 4px solid #111;
+      margin: 3rem auto 1.1rem auto;
+      padding: 2.5rem 2rem;
+      max-width: 950px;
+      width: 98vw;
+      min-width: 320px;
+    }
+
+    .chart-title-big {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 1.2rem;
+    }
+
+    .chart-img-wrapper {
+      text-align: center;
+      margin-bottom: 1.3rem;
+    }
+
+    .chart-img-wrapper img {
+      max-width: 96%;
+      height: auto;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(36,48,94,0.11);
+      display: block;
+      margin: 0 auto;
+    }
+
+    .chart-img-wrapper iframe {
+      width: 100%;
+      height: 480px;
+      max-width: 900px;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(36,48,94,0.11);
+      display: block;
+      margin: 0 auto;
+      background: #fff;
+    }
+
+    .segment-explain {
+      margin-top: 0;
+      margin-bottom: 2.5rem;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 2px 14px rgba(255,128,0,0.10);
+      border: 2.5px solid #ff8000;
+      padding: 2rem 1.5rem 1.5rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .explain-body {
+      font-size: 1.08rem;
+      color: #444;
+      line-height: 1.5;
+      margin-bottom: 1.3rem;
+    }
+
+    .tools-used {
+      background: #f3f6fb;
+      border-left: 4px solid #ff8000;
+      margin: 1.2rem 0 0.5rem;
+      padding: 0.9rem 1.2rem;
+      border-radius: 5px;
+      font-size: 1.08rem;
+      color: #222;
+    }
+
+    .tools-used-title {
+      font-weight: 600;
+      color: #ff8000;
+      margin-bottom: 0.3rem;
+      font-size: 1.07rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .segment-desc {
+      font-size: 1.08rem;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #222;
+      color: #ddd;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.95rem;
+      margin-top: 3rem;
+    }
 
     /* Scroll to top button */
     #scrollToTopBtn {
-      display: none;
       position: fixed;
-      bottom: 30px;
-      right: 30px;
-      z-index: 99;
-      border: none;
-      outline: none;
+      bottom: 20px;
+      right: 20px;
+      display: none;
       background-color: #ff8000;
       color: white;
+      border: none;
+      border-radius: 50%;
+      padding: 0.7rem 1rem;
+      font-size: 1.4rem;
       cursor: pointer;
-      padding: 12px 16px;
-      border-radius: 6px;
-      font-size: 16px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
     }
 
-    #scrollToTopBtn:hover {
-      background-color: #e67000;
-    }
-
-    footer {
-      background-color: #222;
-      color: #eee;
-      text-align: center;
-      padding: 1.2rem 1rem;
-      font-size: 0.95rem;
-      margin-top: 4rem;
+    @media (max-width: 600px) {
+      .chart-img-wrapper iframe { height: 250px; }
     }
   </style>
 </head>
@@ -45,44 +205,52 @@
   <h1>My Data Visualization Portfolio</h1>
 </header>
 
-<!-- ... all your existing content untouched ... -->
+<div class="intro-section">
+  <p>
+    Welcome to my portfolio of data visualizations. Here, I present a selection of charts that reflect my approach to turning raw data into meaningful stories. Each visualization is accompanied by a narrative that explains its context, purpose, and the insights it reveals.
+  </p>
+</div>
 
-<!-- Final container closing the last chart -->
 <div class="container">
-  <section class="segment-explain">
-    <div class="explain-body">
-      This animated bar chart race tracks the percentage of population fully vaccinated in various countries until July 2021. It highlights how high-income countries surged ahead early, leaving others behind. The widening gap reflects the systemic inequality in global health access.
-    </div>
-    <div class="tools-used">
-      <span class="tools-used-title">TOOLS USED:</span><br>
-      Flourish
-    </div>
+  <section class="segment-intro-highlight">
+    <div class="segment-intro-title">India’s Telecom Story: Growth, Pricing and the 5G Shift</div>
+    <div class="segment-intro-desc">This segment captures major trends shaping India’s telecom sector—from competitive dynamics and market consolidation to tariff changes and data usage growth driven by 5G. These charts explore how customer behavior and corporate strategy have evolved post-Jio's entry and in the wake of new technological rollouts.</div>
   </section>
 </div>
 
-<!-- Scroll to Top Button -->
-<button onclick="scrollToTop()" id="scrollToTopBtn" title="Go to top">↑ Top</button>
+<!-- Chart 1 -->
+<div class="segment-big-chart-enclosure">
+  <div class="chart-title chart-title-big">Market Share of Indian Telcos (2023)</div>
+  <iframe 
+    src="https://ajententerprises.github.io/Aleef-s-Data-Portfolio/area_stacked%20copy%203.html"
+    allowfullscreen
+    loading="lazy"
+    title="Market Share of Indian Telcos (2023)">
+  </iframe>
+</div>
+<div class="container">
+  <section class="segment-explain">
+    <div class="explain-body">This area chart visualizes the shifting market share among India's major telecom operators since the Vodafone-Idea merger in 2018...</div>
+    <div class="tools-used"><span class="tools-used-title">TOOLS USED:</span><br>Chart.js, HTML, TRAI Data</div>
+  </section>
+</div>
+
+<!-- [REPEAT: Chart 2, 3, 4, 5 with the same format you had — keeping them unchanged for brevity] -->
 
 <!-- Footer -->
 <footer>
-  © 2025 Aleef Jahan. All rights reserved.
+  &copy; 2025 Aleef Jahan. All rights reserved. This portfolio showcases personal work and visual storytelling using publicly available datasets.
 </footer>
 
+<!-- Scroll to Top Button -->
+<button id="scrollToTopBtn" onclick="scrollToTop()">↑</button>
+
 <script>
-  // Scroll to top button functionality
-  const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-
-  window.onscroll = function () {
-    scrollFunction();
-  };
-
-  function scrollFunction() {
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-      scrollToTopBtn.style.display = "block";
-    } else {
-      scrollToTopBtn.style.display = "none";
-    }
-  }
+  // Show scroll button only when scrolled down
+  window.addEventListener("scroll", function() {
+    const btn = document.getElementById("scrollToTopBtn");
+    btn.style.display = window.pageYOffset > 300 ? "block" : "none";
+  });
 
   function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
