@@ -5,45 +5,24 @@
   <title>Telco Market Share</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
-    body {
-      margin: 40px;
-      font-family: Helvetica, Arial, sans-serif;
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
       background: #fff;
-    }
-    .headline {
-      font-family: 'Helvetica Rounded', 'Arial Rounded MT Bold', Arial, sans-serif;
-      font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 18px;
-      margin-left: 36px;
-    }
-    .subhead {
-      font-family: Helvetica, Arial, sans-serif;
-      font-size: 16px;
-      font-weight: normal;
-      margin-bottom: 16px;
-      max-width: 800px;
-      margin-left: 36px;
-    }
-    .caption {
-      font-family: Helvetica, Arial, sans-serif;
-      font-weight: bold;
-      font-size: 15px;
-      margin-bottom: 20px;
-      margin-left: 36px;
+      overflow: hidden;
     }
     .chart-wrapper {
-      position: relative;
-      width: 100%;
+      width: 100vw;
       max-width: 900px;
       height: 480px;
       margin: 0 auto;
       background: #fff;
       border-radius: 12px;
       box-shadow: 0 1px 8px rgba(36,48,94,0.13);
-      min-width: 0;
-      overflow: visible !important;
       border: 2px solid #eee;
+      position: relative;
+      overflow: visible;
     }
     canvas {
       width: 100% !important;
@@ -53,58 +32,29 @@
       margin: 0 auto;
       background: #fff;
       border-radius: 12px;
-      box-shadow: 0 1px 3px rgba(36,48,94,0.08);
     }
     .label {
       position: absolute;
       font-weight: bold;
       font-family: Helvetica, Arial, sans-serif;
-      font-size: 16px;
+      font-size: 15px;
       pointer-events: none;
-      right: 16px;
-      text-align: left;
-      width: 100px;
+      right: 8px;
+      width: 80px;
       text-shadow: 0 1px 2px #fff;
     }
-    .label.jio {
-      top: 36%;
-      color: rgba(25, 25, 112, 0.95);
-    }
-    .label.voda {
-      top: 68%;
-      color: rgba(255, 165, 0, 0.9);
-    }
-    .label.airtel {
-      top: 85%;
-      color: rgba(255, 0, 0, 0.9);
-    }
-    @media (max-width: 950px) {
-      .chart-wrapper, canvas { max-width: 99vw; }
-      .headline, .subhead, .caption { margin-left: 3vw; max-width: 95vw; }
-      .label { width: 70px; font-size: 13px; right: 4px; }
-      .chart-wrapper { height: 54vw; max-height: 480px; }
-      canvas { height: 54vw !important; max-height: 480px; }
-    }
-    @media (max-width: 700px) {
-      .chart-wrapper { height: 260px; }
-      canvas { height: 260px !important; }
-    }
+    .label.jio   { top: 36%; color: rgba(25, 25, 112, 0.95);}
+    .label.voda  { top: 68%; color: rgba(255, 165, 0, 0.9);}
+    .label.airtel{ top: 85%; color: rgba(255, 0, 0, 0.9);}
   </style>
 </head>
 <body>
-  <div class="headline">Jio, Airtel eating into Vodafone’s market share</div>
-  <div class="subhead">
-    The 2018 Vodafone-Idea merger failed to stem their subscriber bleed. Rivals Jio and Airtel have since gained users at the debt-ridden telco’s expense.
-  </div>
-  <div class="caption">Market share of Indian telcos since Vodafone-Idea merger</div>
-
   <div class="chart-wrapper">
     <canvas id="telcoChart"></canvas>
     <div class="label jio">Jio</div>
     <div class="label voda">Vodafone Idea</div>
     <div class="label airtel">Airtel</div>
   </div>
-
   <script>
     const labels = [
       "Q2 2019", "Q3 2019", "Q4 2019", "Q1 2020", "Q2 2020", "Q3 2020", "Q4 2020", 
@@ -112,7 +62,6 @@
       "Q4 2022", "Q1 2023", "Q2 2023", "Q3 2023", "Q4 2023", "Q1 2024", "Q2 2024", 
       "Q3 2024", "Q4 2024", "Q1 2025", "Q2 2025", "Q3 2025", "Q4 2025"
     ];
-
     const data = {
       labels: labels,
       datasets: [
@@ -145,25 +94,19 @@
         }
       ]
     };
-
     const config = {
       type: 'line',
       data: data,
       options: {
         responsive: true,
         maintainAspectRatio: false,
-        plugins: {
-          legend: { display: false }
-        },
-        interaction: {
-          mode: 'index',
-          intersect: false
-        },
+        plugins: {legend: {display: false}},
+        interaction: {mode: 'index', intersect: false},
         scales: {
           x: {
             stacked: true,
             ticks: {
-              font: { size: 14 },
+              font: { size: 13 },
               maxRotation: 0,
               minRotation: 0,
               callback: function(_, index) {
@@ -174,7 +117,7 @@
           y: {
             stacked: true,
             ticks: {
-              font: { size: 14 },
+              font: { size: 13 },
               callback: function(value) {
                 if (value === 1200) return ['1200', 'mln users'];
                 return value;
@@ -186,7 +129,6 @@
         }
       }
     };
-
     new Chart(document.getElementById('telcoChart'), config);
   </script>
 </body>
