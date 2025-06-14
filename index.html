@@ -28,7 +28,6 @@
     header h1 {
         color: #fff;
         font-size: 2.5rem;
-        font-family: 'Helvetica Neue', Helvetica, 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
         letter-spacing: 0.04em;
         margin-bottom: 0.3em;
     }
@@ -45,33 +44,27 @@
         margin: 0 auto 2rem;
         padding: 0 1rem;
     }
-    /* Updated orange intro enclosure */
     .segment-intro-highlight {
         background: #ff8000;
         border-radius: 16px;
         border: 3px solid #ff8000;
-        box-shadow: none;
-        padding: 2.3rem 2.1rem 2.3rem 2.1rem;
+        padding: 2.3rem 2.1rem;
         margin-bottom: 2.5rem;
         max-width: 99vw;
     }
     .segment-intro-title {
-        font-family: 'Helvetica Neue', Helvetica, Arial, 'Arial Nova', 'Nimbus Sans', sans-serif;
         font-size: 2.1rem;
         font-weight: 700;
         color: #fff;
         margin-bottom: 1.1rem;
         line-height: 1.15;
-        letter-spacing: 0.01em;
     }
     .segment-intro-desc {
-        font-family: 'Segoe UI', Arial, sans-serif;
         font-size: 1.08rem;
         color: #111;
         line-height: 1.5;
-        margin-bottom: 0;
-        margin-top: 0;
         font-weight: 600;
+        margin: 0;
     }
     .segment-big-chart-enclosure {
         background: #fff;
@@ -79,11 +72,10 @@
         box-shadow: 0 2px 20px rgba(36,48,94,0.12);
         border: 4px solid #111;
         margin: 3rem auto 1.1rem auto;
-        padding: 2.5rem 2rem 2.5rem;
+        padding: 2.5rem 2rem;
         max-width: 950px;
         width: 98vw;
         min-width: 320px;
-        border-width: 4px;
     }
     .chart-title-big {
         font-size: 1.5rem;
@@ -100,8 +92,6 @@
         height: auto;
         border-radius: 6px;
         box-shadow: 0 1px 3px rgba(36,48,94,0.11);
-        display: block;
-        margin: 0 auto;
     }
     .chart-img-wrapper iframe {
         width: 100%;
@@ -109,13 +99,9 @@
         max-width: 900px;
         border: none;
         border-radius: 8px;
-        box-shadow: 0 1px 3px rgba(36,48,94,0.11);
-        display: block;
-        margin: 0 auto;
         background: #fff;
     }
     .segment-explain {
-        margin-top: 0;
         margin-bottom: 2.5rem;
         background: #fff;
         border-radius: 14px;
@@ -125,7 +111,6 @@
         max-width: 800px;
         margin-left: auto;
         margin-right: auto;
-        border-width: 4px;
     }
     .explain-body {
         font-size: 1.08rem;
@@ -136,7 +121,6 @@
     .tools-used {
         background: #f3f6fb;
         border-left: 4px solid #ff8000;
-        margin: 1.2rem 0 0.5rem;
         padding: 0.9rem 1.2rem;
         border-radius: 5px;
         font-size: 1.08rem;
@@ -150,42 +134,60 @@
         text-transform: uppercase;
         letter-spacing: 0.04em;
     }
-    .segment-desc {
-        font-size: 1.08rem;
-        color: #444;
-        line-height: 1.5;
+    .footer {
+        background: #222;
+        color: #eee;
+        text-align: center;
+        padding: 1rem 0;
+        margin-top: 4rem;
+        font-size: 0.95rem;
     }
     .border-black  { border-color: #111 !important; }
     .border-orange { border-color: #ff8000 !important; }
-    @media (max-width: 1000px) {
-      .segment-big-chart-enclosure { max-width: 99vw; }
-      .chart-img-wrapper iframe { max-width: 99vw; }
+
+    /* Scroll Buttons */
+    .scroll-btn {
+        position: fixed;
+        bottom: 40px;
+        right: 20px;
+        z-index: 100;
+        background-color: #ff8000;
+        color: #fff;
+        padding: 10px 14px;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        margin-bottom: 10px;
+        font-size: 14px;
+        transition: background 0.3s ease;
     }
-    @media (max-width: 900px) {
-        .container, .intro-section, .segment-intro-highlight, .segment-explain, .segment, .chart-section { padding: 0.7rem; }
-        .segment-big-chart-enclosure { padding: 1rem 0.3rem 1.2rem; }
+    .scroll-btn:hover {
+        background-color: #cc6600;
     }
-    @media (max-width: 700px) {
-      .segment-intro-title { font-size: 1.35rem; }
-      .segment-intro-desc { font-size: 1.08rem; }
-      .segment-intro-highlight { padding: 1.2rem 0.6rem 1.2rem 0.6rem; }
+    .scroll-down {
+        bottom: 90px;
     }
+
     @media (max-width: 600px) {
         .chart-img-wrapper iframe { height: 250px; }
+        .scroll-btn { padding: 8px 12px; font-size: 12px; }
     }
     </style>
 </head>
 <body>
+
 <header>
     <h1>My Data Visualization Portfolio</h1>
 </header>
+
 <div class="intro-section">
     <p>
         Welcome to my portfolio of data visualizations. Here, I present a selection of charts that reflect my approach to turning raw data into meaningful stories. Each visualization is accompanied by a narrative that explains its context, purpose, and the insights it reveals.
     </p>
 </div>
+
 <div class="container">
-    <!-- FIRST ORANGE ENCLOSURE (intro, now with orange background and white heading) -->
     <section class="segment-intro-highlight">
         <div class="segment-intro-title">
             India’s Telecom Story: Growth, Pricing and the 5G Shift
@@ -196,12 +198,11 @@
     </section>
 </div>
 
-<!-- 1st chart: Black border -->
+<!-- 1st chart -->
 <div class="segment-big-chart-enclosure border-black">
     <div class="chart-title chart-title-big">Market Share of Indian Telcos (2023)</div>
     <iframe 
         src="https://ajententerprises.github.io/Aleef-s-Data-Portfolio/area_stacked_copy_3.html"
-        style="width: 100%; height: 480px; border: none; display: block; margin: 0 auto; background: #fff;"
         allowfullscreen
         loading="lazy"
         title="Market Share of Indian Telcos (2023)">
@@ -210,7 +211,7 @@
 <div class="container">
     <section class="segment-explain border-black">
         <div class="explain-body">
-            This area chart visualizes the shifting market share among India's major telecom operators since the Vodafone-Idea merger in 2018. It reveals how Jio and Airtel have steadily captured more subscribers, while Vodafone Idea (Vi) has seen a significant drop in its user base. The chart underscores the impact of aggressive pricing strategies, network investments, and industry consolidation on subscriber dynamics. Ultimately, it highlights the competitive pressures and consumer choices that continue to reshape India's telecom landscape.
+            This area chart visualizes the shifting market share among India's major telecom operators since the Vodafone-Idea merger in 2018. It reveals how Jio and Airtel have steadily captured more subscribers, while Vodafone Idea (Vi) has seen a significant drop in its user base.
         </div>
         <div class="tools-used">
             <span class="tools-used-title">TOOLS USED:</span><br>
@@ -219,7 +220,7 @@
     </section>
 </div>
 
-<!-- 2nd chart: Orange border -->
+<!-- 2nd chart -->
 <div class="segment-big-chart-enclosure border-orange">
     <div class="chart-title chart-title-big">Tariff Revisions by Telcos Over Time</div>
     <div class="chart-img-wrapper">
@@ -229,7 +230,7 @@
 <div class="container">
     <section class="segment-explain border-orange">
         <div class="explain-body">
-            This line graph tracks key tariff hikes by India’s major telcos since Jio’s market entry. It highlights three major rounds of price revisions that reset the baseline for ARPU (Average Revenue Per User) in the industry.
+            This line graph tracks key tariff hikes by India’s major telcos since Jio’s market entry.
         </div>
         <div class="tools-used">
             <span class="tools-used-title">TOOLS USED:</span><br>
@@ -238,7 +239,7 @@
     </section>
 </div>
 
-<!-- 3rd chart: Black border -->
+<!-- 3rd chart -->
 <div class="segment-big-chart-enclosure border-black">
     <div class="chart-title chart-title-big">Mobile Data Usage After 5G Rollout</div>
     <div class="chart-img-wrapper">
@@ -248,7 +249,7 @@
 <div class="container">
     <section class="segment-explain border-black">
         <div class="explain-body">
-            This chart shows quarterly mobile data consumption in India, highlighting the surge after the 5G launch. Jio and Airtel dominate data usage, reflecting customer uptake and expanding network coverage.
+            This chart shows quarterly mobile data consumption in India, highlighting the surge after the 5G launch.
         </div>
         <div class="tools-used">
             <span class="tools-used-title">TOOLS USED:</span><br>
@@ -257,7 +258,7 @@
     </section>
 </div>
 
-<!-- 4th chart: Orange border -->
+<!-- 4th chart -->
 <div class="segment-big-chart-enclosure border-orange">
     <div class="chart-title chart-title-big">Ad Revenue Growth Across Broadcasters</div>
     <div class="chart-img-wrapper">
@@ -267,7 +268,7 @@
 <div class="container">
     <section class="segment-explain border-orange">
         <div class="explain-body">
-            This bar chart compares ad revenue growth across India's major TV broadcasters from FY21 to FY23. Star and Zee show notable rebounds, signaling a return in advertiser confidence.
+            This bar chart compares ad revenue growth across India's major TV broadcasters from FY21 to FY23.
         </div>
         <div class="tools-used">
             <span class="tools-used-title">TOOLS USED:</span><br>
@@ -276,7 +277,7 @@
     </section>
 </div>
 
-<!-- 5th chart: Black border -->
+<!-- 5th chart -->
 <div class="segment-big-chart-enclosure border-black">
     <div class="chart-title chart-title-big">A Race Against Time—and Inequality</div>
     <div class="chart-img-wrapper">
@@ -291,7 +292,7 @@
 <div class="container">
     <section class="segment-explain border-black">
         <div class="explain-body">
-            This animated bar chart race tracks the percentage of population fully vaccinated in various countries until July 2021. It highlights how high-income countries surged ahead early, leaving others behind. The widening gap reflects the systemic inequality in global health access.
+            This animated bar chart race tracks the percentage of population fully vaccinated in various countries until July 2021.
         </div>
         <div class="tools-used">
             <span class="tools-used-title">TOOLS USED:</span><br>
@@ -299,6 +300,15 @@
         </div>
     </section>
 </div>
+
+<!-- Scroll buttons -->
+<button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="scroll-btn">⬆ Top</button>
+<button onclick="window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});" class="scroll-btn scroll-down">⬇ Bottom</button>
+
+<!-- Footer -->
+<div class="footer">
+    &copy; 2025 Aleef Jahan. All rights reserved.
+</div>
+
 </body>
 </html>
-
