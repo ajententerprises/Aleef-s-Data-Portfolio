@@ -6,49 +6,46 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     body {
-      margin: 28px;
+      margin: 0;
       font-family: Helvetica, Arial, sans-serif;
-      max-width: 860px;
-      position: relative;
+      background: #fff;
     }
     .headline {
       font-family: 'Helvetica Rounded', 'Arial Rounded MT Bold', Arial, sans-serif;
       font-size: 22px;
       font-weight: bold;
-      margin-bottom: 10px;
-      margin-left: 40px;
+      margin: 32px 0 10px 5vw;
+      max-width: 90vw;
     }
     .subhead {
-      font-family: Helvetica, Arial, sans-serif;
       font-size: 15px;
-      font-weight: normal;
-      margin-bottom: 10px;
-      max-width: 700px;
-      margin-left: 40px;
+      margin: 0 0 10px 5vw;
+      max-width: 90vw;
     }
     .caption {
-      font-family: Helvetica, Arial, sans-serif;
       font-weight: bold;
       font-size: 13px;
-      margin-bottom: 22px;
-      margin-left: 40px;
+      margin: 0 0 22px 5vw;
+      max-width: 90vw;
     }
     .chart-wrapper {
       position: relative;
       width: 100%;
       max-width: 860px;
       margin: 0 auto;
-      min-height: 480px;
-    }
-    canvas {
-      width: 100% !important;
-      max-width: 860px;
-      height: 470px !important;
-      display: block;
-      margin: 0 auto;
+      /* 16:9 aspect ratio for responsive chart */
+      aspect-ratio: 16 / 9;
       background: #fff;
       border-radius: 6px;
       box-shadow: 0 1px 3px rgba(36,48,94,0.11);
+      min-height: 300px;
+    }
+    canvas {
+      width: 100% !important;
+      height: 100% !important;
+      display: block;
+      background: #fff;
+      border-radius: 6px;
     }
     .label {
       position: absolute;
@@ -56,9 +53,9 @@
       font-family: Helvetica, Arial, sans-serif;
       font-size: 13px;
       pointer-events: none;
-      right: 0;
+      right: 0.5vw;
       text-align: left;
-      width: 100px;
+      width: 90px;
       text-shadow: 0 1px 2px #fff;
     }
     .label.jio {
@@ -74,9 +71,9 @@
       color: rgba(255, 0, 0, 0.9);
     }
     @media (max-width: 900px) {
-      body, .chart-wrapper, canvas { max-width: 100vw; }
-      .headline, .subhead, .caption { margin-left: 8px; max-width: 95vw; }
-      .label { width: 70px; }
+      .chart-wrapper { max-width: 100vw; }
+      .headline, .subhead, .caption { margin-left: 2vw; max-width: 98vw;}
+      .label { width: 60px; font-size: 12px; }
     }
   </style>
 </head>
@@ -86,14 +83,12 @@
     The 2018 Vodafone-Idea merger failed to stem their subscriber bleed. Rivals Jio and Airtel have since gained users at the debt-ridden telco’s expense.
   </div>
   <div class="caption">Market share of Indian telcos since Vodafone-Idea merger</div>
-
   <div class="chart-wrapper">
     <canvas id="telcoChart"></canvas>
     <div class="label jio">Jio</div>
     <div class="label voda">Vodafone Idea</div>
     <div class="label airtel">Airtel</div>
   </div>
-
   <script>
     const labels = [
       "Q2 2019", "Q3 2019", "Q4 2019", "Q1 2020", "Q2 2020", "Q3 2020", "Q4 2020", 
@@ -101,7 +96,6 @@
       "Q4 2022", "Q1 2023", "Q2 2023", "Q3 2023", "Q4 2023", "Q1 2024", "Q2 2024", 
       "Q3 2024", "Q4 2024", "Q1 2025", "Q2 2025", "Q3 2025", "Q4 2025"
     ];
-
     const data = {
       labels: labels,
       datasets: [
@@ -134,7 +128,6 @@
         }
       ]
     };
-
     const config = {
       type: 'line',
       data: data,
@@ -175,7 +168,6 @@
         }
       }
     };
-
     new Chart(document.getElementById('telcoChart'), config);
   </script>
 </body>
