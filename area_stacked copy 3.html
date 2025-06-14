@@ -14,38 +14,32 @@
       background: white;
     }
 
-    .scroll-container {
-      overflow-x: auto;
-      overflow-y: hidden;
-      width: 100vw;
-    }
-
     .container {
-      width: 1200px;
+      width: 1000px; /* Reduced from 1200px */
     }
 
     .headline,
     .subhead,
     .caption {
-      margin-left: 50px; /* adjusted to bring text more left */
+      margin-left: 50px;
     }
 
     .headline {
       font-family: 'Helvetica Rounded', 'Arial Rounded MT Bold', Arial, sans-serif;
-      font-size: 24px;
+      font-size: 22px;
       font-weight: bold;
       margin-bottom: 10px;
     }
 
     .subhead {
-      font-size: 16px;
+      font-size: 15px;
       margin-bottom: 10px;
       max-width: 800px;
     }
 
     .caption {
       font-weight: bold;
-      font-size: 14px;
+      font-size: 13px;
       margin-bottom: 25px;
     }
 
@@ -56,8 +50,8 @@
     }
 
     .chart-wrapper {
-      width: 1000px;
-      height: 550px;
+      width: 800px; /* Reduced from 1000px */
+      height: 500px; /* Optional: slightly smaller */
       position: relative;
     }
 
@@ -71,25 +65,25 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      margin-left: -20px; /* Pull labels closer to the chart */
+      margin-left: 0px;
       margin-top: 20px;
       font-weight: bold;
-      font-size: 14px;
+      font-size: 13px;
       font-family: Helvetica, Arial, sans-serif;
     }
 
     .label {
-      margin-bottom: 80px;
+      margin-bottom: 60px;
     }
 
     .label.jio {
       color: rgba(25, 25, 112, 0.95);
-      margin-top: 200px;
+      margin-top: 160px;
     }
 
     .label.voda {
       color: rgba(255, 165, 0, 0.9);
-      margin-top: 60px;
+      margin-top: 50px;
     }
 
     .label.airtel {
@@ -99,24 +93,22 @@
   </style>
 </head>
 <body>
-  <div class="scroll-container">
-    <div class="container">
-      <div class="headline">Jio, Airtel eating into Vodafone’s market share</div>
-      <div class="subhead">
-        The 2018 Vodafone-Idea merger failed to stem their subscriber bleed. Rivals Jio and Airtel have since gained users at the debt-ridden telco’s expense.
+  <div class="container">
+    <div class="headline">Jio, Airtel eating into Vodafone’s market share</div>
+    <div class="subhead">
+      The 2018 Vodafone-Idea merger failed to stem their subscriber bleed. Rivals Jio and Airtel have since gained users at the debt-ridden telco’s expense.
+    </div>
+    <div class="caption">Market share of Indian telcos since Vodafone-Idea merger</div>
+
+    <div class="chart-label-wrapper">
+      <div class="chart-wrapper">
+        <canvas id="telcoChart"></canvas>
       </div>
-      <div class="caption">Market share of Indian telcos since Vodafone-Idea merger</div>
 
-      <div class="chart-label-wrapper">
-        <div class="chart-wrapper">
-          <canvas id="telcoChart"></canvas>
-        </div>
-
-        <div class="labels">
-          <div class="label jio">Jio</div>
-          <div class="label voda">Vodafone Idea</div>
-          <div class="label airtel">Airtel</div>
-        </div>
+      <div class="labels">
+        <div class="label jio">Jio</div>
+        <div class="label voda">Vodafone Idea</div>
+        <div class="label airtel">Airtel</div>
       </div>
     </div>
   </div>
@@ -179,7 +171,7 @@
           x: {
             stacked: true,
             ticks: {
-              font: { size: 13 },
+              font: { size: 12 },
               maxRotation: 0,
               minRotation: 0,
               callback: function(_, index) {
@@ -190,7 +182,7 @@
           y: {
             stacked: true,
             ticks: {
-              font: { size: 13 },
+              font: { size: 12 },
               callback: function(value) {
                 if (value === 1200) return ['1200', 'mln users'];
                 return value;
