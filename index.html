@@ -46,7 +46,33 @@
         padding: 0 1rem;
     }
     /* Orange enclosures */
-    .segment-intro, .segment-follow, .segment-explain {
+    .segment-intro-highlight {
+        background: #fff;
+        border-radius: 16px;
+        border: 3px solid #ff8000;
+        box-shadow: none;
+        padding: 2.3rem 2.1rem 2.3rem 2.1rem;
+        margin-bottom: 2.5rem;
+        max-width: 99vw;
+    }
+    .segment-intro-title {
+        font-family: 'Helvetica Neue', Helvetica, Arial, 'Arial Nova', 'Nimbus Sans', sans-serif;
+        font-size: 2.1rem;
+        font-weight: 700;
+        color: #ff8000;
+        margin-bottom: 1.1rem;
+        line-height: 1.15;
+        letter-spacing: 0.01em;
+    }
+    .segment-intro-desc {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        font-size: 1.23rem;
+        color: #4a565e;
+        line-height: 1.5;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+    .segment-follow, .segment-explain {
         background: #fff;
         border-radius: 14px;
         box-shadow: 0 2px 14px rgba(255,128,0,0.10);
@@ -139,12 +165,18 @@
       .chart-img-wrapper iframe { max-width: 99vw; }
     }
     @media (max-width: 900px) {
-        .container, .intro-section, .segment-intro, .segment-follow, .segment-explain, .segment, .chart-section { padding: 0.7rem; }
+        .container, .intro-section, .segment-intro-highlight, .segment-follow, .segment-explain, .segment, .chart-section { padding: 0.7rem; }
         .chart-section { padding-top: 1.2rem; }
         header h1 { font-size: 1.5rem; }
-        .segment-title { font-size: 1.25rem; }
+        .segment-intro-title { font-size: 1.25rem; }
+        .chart-title { font-size: 1.1rem; }
         .chart-img-wrapper iframe { max-width: 100vw; }
         .segment-big-chart-enclosure { padding: 1rem 0.3rem 1.2rem; }
+    }
+    @media (max-width: 700px) {
+      .segment-intro-title { font-size: 1.35rem; }
+      .segment-intro-desc { font-size: 1rem; }
+      .segment-intro-highlight { padding: 1.2rem 0.6rem 1.2rem 0.6rem; }
     }
     @media (max-width: 600px) {
         .chart-img-wrapper iframe { height: 250px; }
@@ -161,13 +193,15 @@
         </p>
     </div>
     <div class="container">
-        <!-- FIRST ORANGE ENCLOSURE -->
-        <section class="segment-intro">
-            <div class="segment-title">India’s Telecom Story: Growth, Pricing and the 5G Shift</div>
-            <div class="segment-desc">
-                This segment captures major trends shaping India’s telecom sector—from competitive dynamics and market consolidation to tariff changes and data usage growth driven by 5G. These charts explore how customer behavior and corporate strategy have evolved post-Jio's entry and in the wake of new technological rollouts.
-            </div>
-        </section>
+      <!-- FIRST ORANGE ENCLOSURE (new style) -->
+      <section class="segment-intro-highlight">
+        <div class="segment-intro-title">
+          India’s Telecom Story: Growth, Pricing and the 5G Shift
+        </div>
+        <div class="segment-intro-desc">
+          This segment captures major trends shaping India’s telecom sector—from competitive dynamics and market consolidation to tariff changes and data usage growth driven by 5G. These charts explore how customer behavior and corporate strategy have evolved post-Jio's entry and in the wake of new technological rollouts.
+        </div>
+      </section>
     </div>
     <!-- BLACK ENCLOSURE COMES IMMEDIATELY AFTER FIRST ORANGE -->
     <div class="segment-big-chart-enclosure">
@@ -183,6 +217,8 @@
     <!-- ORANGE EXPLANATION ENCLOSURE FOR THE BLACK CHART -->
     <div class="container">
       <section class="segment-explain">
+        <div class="chart-section">
+          <div class="chart-title">Explaining the Market Share Chart</div>
           <div class="chart-story">
             This area chart visualizes the shifting market share among India's major telecom operators since the Vodafone-Idea merger in 2018. It reveals how Jio and Airtel have steadily captured more subscribers, while Vodafone Idea (Vi) has seen a significant drop in its user base. The chart underscores the impact of aggressive pricing strategies, network investments, and industry consolidation on subscriber dynamics. Ultimately, it highlights the competitive pressures and consumer choices that continue to reshape India's telecom landscape.
           </div>
