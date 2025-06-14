@@ -2,63 +2,154 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Telco Consolidation Area Chart</title>
+  <title>Telco Market Share</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.4.0"></script>
   <style>
     body {
-      font-family: sans-serif;
-      background: #fff;
       margin: 0;
-      padding: 2rem;
+      padding: 40px 0;
+      font-family: Helvetica, Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      background: white;
     }
 
-    .chart-container {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 0;
-      overflow: hidden; /* 🔒 Removes scrollbars */
+    .container {
+      width: 1200px;
+    }
+
+    .headline,
+    .subhead,
+    .caption {
+      margin-left: 70px; /* Shift text to align with x-axis */
+    }
+
+    .headline {
+      font-family: 'Helvetica Rounded', 'Arial Rounded MT Bold', Arial, sans-serif;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .subhead {
+      font-size: 16px;
+      margin-bottom: 10px;
+      max-width: 800px;
+    }
+
+    .caption {
+      font-weight: bold;
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+
+    .chart-label-wrapper {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .chart-wrapper {
+      width: 1000px;
+      height: 550px;
+      position: relative;
     }
 
     canvas {
+      width: 100% !important;
+      height: 100% !important;
       display: block;
-      margin: 0 auto;
-      background-color: white;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-      border-radius: 6px;
+    }
+
+    .labels {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      margin-left: -20px; /* Pull labels closer to the chart */
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 14px;
+      font-family: Helvetica, Arial, sans-serif;
+    }
+
+    .label {
+      margin-bottom: 80px;
+    }
+
+    .label.jio {
+      color: rgba(25, 25, 112, 0.95);
+      margin-top: 200px; /* Manually fine-tuned */
+    }
+
+    .label.voda {
+      color: rgba(255, 165, 0, 0.9);
+      margin-top: 60px;
+    }
+
+    .label.airtel {
+      color: rgba(255, 0, 0, 0.9);
+      margin-top: 0px;
     }
   </style>
 </head>
 <body>
-  <div class="chart-container">
-    <canvas id="myChart" width="720" height="400"></canvas>
+  <div class="container">
+    <div class="headline">Jio, Airtel eating into Vodafone’s market share</div>
+    <div class="subhead">
+      The 2018 Vodafone-Idea merger failed to stem their subscriber bleed. Rivals Jio and Airtel have since gained users at the debt-ridden telco’s expense.
+    </div>
+    <div class="caption">Market share of Indian telcos since Vodafone-Idea merger</div>
+
+    <div class="chart-label-wrapper">
+      <div class="chart-wrapper">
+        <canvas id="telcoChart"></canvas>
+      </div>
+
+      <div class="labels">
+        <div class="label jio">Jio</div>
+        <div class="label voda">Vodafone Idea</div>
+        <div class="label airtel">Airtel</div>
+      </div>
+    </div>
   </div>
 
   <script>
-    const ctx = document.getElementById('myChart').getContext('2d');
+    const labels = [
+      "Q2 2019", "Q3 2019", "Q4 2019", "Q1 2020", "Q2 2020", "Q3 2020", "Q4 2020",
+      "Q1 2021", "Q2 2021", "Q3 2021", "Q4 2021", "Q1 2022", "Q2 2022", "Q3 2022",
+      "Q4 2022", "Q1 2023", "Q2 2023", "Q3 2023", "Q4 2023", "Q1 2024", "Q2 2024",
+      "Q3 2024", "Q4 2024", "Q1 2025", "Q2 2025", "Q3 2025", "Q4 2025"
+    ];
 
     const data = {
-      labels: [
-        'Q4 2019', 'Q4 2020', 'Q4 2021', 'Q4 2022', 'Q4 2023'
-      ],
+      labels: labels,
       datasets: [
         {
-          label: 'Jio',
-          data: [370, 410, 460, 510, 550],
-          backgroundColor: 'rgba(0, 176, 240, 0.6)',
-          fill: true
+          label: 'Airtel',
+          data: [332.8, 284.2, 282.6, 281.1, 279.4, 283, 283.7, 279.9, 293.7, 307.9, 321.4, 321.2, 323.5, 322.9, 326, 327, 328, 332, 335, 339, 342, 346, 352, 355, 352, 357, 362],
+          backgroundColor: 'rgba(255, 0, 0, 0.9)',
+          borderColor: 'rgba(255, 0, 0, 1)',
+          fill: true,
+          stack: 'stack1',
+          pointRadius: 0
         },
         {
           label: 'Vodafone Idea',
-          data: [280, 260, 230, 210, 190],
-          backgroundColor: 'rgba(255, 0, 0, 0.5)',
-          fill: true
+          data: [422, 387.2, 334.1, 320, 311, 304, 291.1, 279.8, 271.8, 269.8, 267.8, 255.4, 253, 247.2, 244, 240, 234, 229, 226, 221, 220, 215, 213, 210, 205, 200, 198.2],
+          backgroundColor: 'rgba(255, 165, 0, 0.9)',
+          borderColor: 'rgba(255, 165, 0, 1)',
+          fill: true,
+          stack: 'stack1',
+          pointRadius: 0
         },
         {
-          label: 'Airtel',
-          data: [300, 320, 340, 360, 390],
-          backgroundColor: 'rgba(255, 192, 0, 0.7)',
-          fill: true
+          label: 'Jio',
+          data: [252.3, 280.1, 306.7, 331.3, 355.2, 370, 387.5, 398.3, 405.6, 410.8, 426.2, 440.6, 429.5, 421, 410, 420, 430, 433, 439, 449, 460, 471, 482, 490, 479, 482, 488],
+          backgroundColor: 'rgba(25, 25, 112, 0.95)',
+          borderColor: 'rgba(25, 25, 112, 1)',
+          fill: true,
+          stack: 'stack1',
+          pointRadius: 0
         }
       ]
     };
@@ -67,73 +158,44 @@
       type: 'line',
       data: data,
       options: {
-        responsive: false,
+        responsive: true,
         maintainAspectRatio: false,
         plugins: {
-          legend: {
-            display: false
-          },
-          annotation: {
-            annotations: {
-              label1: {
-                type: 'label',
-                xValue: 'Q4 2023',
-                yValue: 550,
-                backgroundColor: 'rgba(0,0,0,0)',
-                content: ['Jio'],
-                color: '#000',
-                font: { weight: 'bold', size: 13 },
-                xAdjust: 10,
-                yAdjust: -10
-              },
-              label2: {
-                type: 'label',
-                xValue: 'Q4 2023',
-                yValue: 390,
-                backgroundColor: 'rgba(0,0,0,0)',
-                content: ['Airtel'],
-                color: '#000',
-                font: { weight: 'bold', size: 13 },
-                xAdjust: 10,
-                yAdjust: -10
-              },
-              label3: {
-                type: 'label',
-                xValue: 'Q4 2023',
-                yValue: 190,
-                backgroundColor: 'rgba(0,0,0,0)',
-                content: ['Vodafone Idea'],
-                color: '#000',
-                font: { weight: 'bold', size: 13 },
-                xAdjust: 10,
-                yAdjust: -10
-              }
-            }
-          }
+          legend: { display: false }
+        },
+        interaction: {
+          mode: 'index',
+          intersect: false
         },
         scales: {
           x: {
             stacked: true,
-            grid: { display: false },
-            title: {
-              display: true,
-              text: 'Quarter'
+            ticks: {
+              font: { size: 13 },
+              maxRotation: 0,
+              minRotation: 0,
+              callback: function(_, index) {
+                return labels[index].includes("Q4") ? labels[index] : '';
+              }
             }
           },
           y: {
             stacked: true,
-            grid: { drawBorder: false },
-            title: {
-              display: true,
-              text: 'Subscribers (in millions)'
-            }
+            ticks: {
+              font: { size: 13 },
+              callback: function(value) {
+                if (value === 1200) return ['1200', 'mln users'];
+                return value;
+              }
+            },
+            suggestedMax: 1200,
+            title: { display: false }
           }
         }
-      },
-      plugins: [ChartAnnotation.Annotation]
+      }
     };
 
-    const myChart = new Chart(ctx, config);
+    new Chart(document.getElementById('telcoChart'), config);
   </script>
 </body>
 </html>
