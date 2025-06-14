@@ -89,10 +89,14 @@
     }
     .chart-img-wrapper iframe {
         width: 100%;
-        height: 600px;
+        max-width: 860px;
+        height: 480px;
         border: none;
         border-radius: 6px;
         box-shadow: 0 1px 3px rgba(36,48,94,0.11);
+        display: block;
+        margin: 0 auto;
+        background: #fff;
     }
     .chart-story {
         font-size: 1.08rem;
@@ -119,11 +123,15 @@
     .flourish-embed {
         margin: 2rem 0;
     }
-    @media (max-width: 600px) {
+    @media (max-width: 900px) {
         .container, .intro-section, .segment, .chart-section { padding: 0.7rem; }
         .chart-section { padding-top: 1.2rem; }
         header h1 { font-size: 1.5rem; }
         .segment-title { font-size: 1.25rem; }
+        .chart-img-wrapper iframe { max-width: 100vw; }
+    }
+    @media (max-width: 600px) {
+        .chart-img-wrapper iframe { height: 280px; }
     }
 </style>
     
@@ -149,11 +157,13 @@
             <section class="chart-section">
                 <div class="chart-title">Market Share of Indian Telcos (2023)</div>
                <div class="chart-img-wrapper" style="overflow: hidden;">
-    <iframe 
-        src="https://ajententerprises.github.io/Aleef-s-Data-Portfolio/area_stacked%20copy%203.html"
-        style="width: 100%; max-width: 860px; height: 580px; border: none; display: block; margin: 0 auto;">
-    </iframe>
-</div>
+                  <iframe 
+                      src="https://ajententerprises.github.io/Aleef-s-Data-Portfolio/area_stacked%20copy%203.html"
+                      allowfullscreen
+                      loading="lazy"
+                      title="Market Share of Indian Telcos (2023)">
+                  </iframe>
+                </div>
                 <div class="chart-story">
                     This donut chart visualizes the wireless subscriber base distribution among India's major telecom players as of 2023. Jio continues to lead, followed by Airtel and Vi. The chart shows how consolidation and customer churn have reshaped market dynamics.
                 </div>
