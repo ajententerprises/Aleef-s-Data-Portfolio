@@ -45,7 +45,6 @@
         margin: 0 auto 2rem;
         padding: 0 1rem;
     }
-    /* Updated orange intro enclosure */
     .segment-intro-highlight {
         background: #ff8000;
         border-radius: 16px;
@@ -157,6 +156,46 @@
     }
     .border-black  { border-color: #111 !important; }
     .border-orange { border-color: #ff8000 !important; }
+    /* Footer and scroll buttons */
+    .site-footer {
+        background: #222;
+        color: #fff;
+        text-align: center;
+        padding: 1.5rem 1rem;
+        font-size: 1rem;
+        margin-top: 2.5rem;
+        letter-spacing: 0.01em;
+    }
+    .scroll-btns {
+        position: fixed;
+        right: 22px;
+        bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        z-index: 100;
+        gap: 12px;
+    }
+    .scroll-btn {
+        background: #ff8000;
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        font-size: 1.6rem;
+        box-shadow: 0 3px 16px rgba(60,60,60,0.10);
+        cursor: pointer;
+        transition: background 0.2s, box-shadow 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        outline: none;
+    }
+    .scroll-btn:hover,
+    .scroll-btn:focus {
+        background: #ff9500;
+        box-shadow: 0 4px 24px rgba(60,60,60,0.18);
+    }
     @media (max-width: 1000px) {
       .segment-big-chart-enclosure { max-width: 99vw; }
       .chart-img-wrapper iframe { max-width: 99vw; }
@@ -172,10 +211,12 @@
     }
     @media (max-width: 600px) {
         .chart-img-wrapper iframe { height: 250px; }
+        .scroll-btn { width: 40px; height: 40px; font-size: 1.25rem; }
     }
     </style>
 </head>
 <body>
+<a id="top"></a>
 <header>
     <h1>My Data Visualization Portfolio</h1>
 </header>
@@ -299,5 +340,30 @@
         </div>
     </section>
 </div>
+
+<!-- Scroll Buttons -->
+<div class="scroll-btns">
+    <button class="scroll-btn" aria-label="Scroll to Top" title="Scroll to Top" onclick="scrollToTop()">
+        &#8679;
+    </button>
+    <button class="scroll-btn" aria-label="Scroll to Bottom" title="Scroll to Bottom" onclick="scrollToBottom()">
+        &#8681;
+    </button>
+</div>
+
+<!-- Footer -->
+<footer class="site-footer" id="footer">
+    &copy; 2025 Aleef’s Data Portfolio &mdash; All visualizations and code by Aleef Ajent. <br>
+    <span style="font-size:0.95em; color:#ffa94d;">Connect: <a href="mailto:aleefajent@gmail.com" style="color:#fff;text-decoration:underline;">aleefajent@gmail.com</a></span>
+</footer>
+
+<script>
+function scrollToTop() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+}
+function scrollToBottom() {
+    window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});
+}
+</script>
 </body>
 </html>
