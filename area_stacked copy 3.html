@@ -15,31 +15,31 @@
     }
 
     .container {
-      width: 900px;
+      width: 1200px;
     }
 
     .headline,
     .subhead,
     .caption {
-      margin-left: 65px;
+      margin-left: 70px; /* Shift text to align with x-axis */
     }
 
     .headline {
       font-family: 'Helvetica Rounded', 'Arial Rounded MT Bold', Arial, sans-serif;
-      font-size: 22px;
+      font-size: 24px;
       font-weight: bold;
       margin-bottom: 10px;
     }
 
     .subhead {
-      font-size: 14px;
+      font-size: 16px;
       margin-bottom: 10px;
-      max-width: 750px;
+      max-width: 800px;
     }
 
     .caption {
       font-weight: bold;
-      font-size: 13px;
+      font-size: 14px;
       margin-bottom: 25px;
     }
 
@@ -50,10 +50,9 @@
     }
 
     .chart-wrapper {
-      width: 700px;
-      height: 500px;
+      width: 1000px;
+      height: 550px;
       position: relative;
-      padding-left: 50px; /* Fix Y-axis clipping */
     }
 
     canvas {
@@ -66,20 +65,20 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      margin-left: 0px;
+      margin-left: -20px; /* Pull labels closer to the chart */
       margin-top: 20px;
       font-weight: bold;
-      font-size: 12px;
+      font-size: 14px;
       font-family: Helvetica, Arial, sans-serif;
     }
 
     .label {
-      margin-bottom: 50px;
+      margin-bottom: 80px;
     }
 
     .label.jio {
       color: rgba(25, 25, 112, 0.95);
-      margin-top: 180px;
+      margin-top: 200px; /* Manually fine-tuned */
     }
 
     .label.voda {
@@ -95,7 +94,7 @@
 </head>
 <body>
   <div class="container">
-    <div class="headline">Jio, Airtel eating into Vodafone’s market shareeeeeeeeeeeeeeeeeeee</div>
+    <div class="headline">Jio, Airtel eating into Vodafone’s market share</div>
     <div class="subhead">
       The 2018 Vodafone-Idea merger failed to stem their subscriber bleed. Rivals Jio and Airtel have since gained users at the debt-ridden telco’s expense.
     </div>
@@ -172,10 +171,9 @@
           x: {
             stacked: true,
             ticks: {
-              font: { size: 12 },
+              font: { size: 13 },
               maxRotation: 0,
               minRotation: 0,
-              maxTicksLimit: 8,  // ← Show more Q4s
               callback: function(_, index) {
                 return labels[index].includes("Q4") ? labels[index] : '';
               }
@@ -184,7 +182,7 @@
           y: {
             stacked: true,
             ticks: {
-              font: { size: 12 },
+              font: { size: 13 },
               callback: function(value) {
                 if (value === 1200) return ['1200', 'mln users'];
                 return value;
