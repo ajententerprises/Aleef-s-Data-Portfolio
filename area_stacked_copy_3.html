@@ -18,9 +18,10 @@
       height: 480px;
       margin: 0 auto;
       background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 1px 8px rgba(36,48,94,0.13);
-      border: 2px solid #eee;
+      border-radius: 14px;
+      /* Faint, subtle border like your screenshot */
+      border: 1.5px solid rgba(0,0,0,0.06);
+      box-shadow: none;
       position: relative;
       overflow: visible;
     }
@@ -31,7 +32,7 @@
       display: block;
       margin: 0 auto;
       background: #fff;
-      border-radius: 12px;
+      border-radius: 14px;
     }
     .label {
       position: absolute;
@@ -39,13 +40,19 @@
       font-family: Helvetica, Arial, sans-serif;
       font-size: 15px;
       pointer-events: none;
-      right: 8px;
-      width: 80px;
-      text-shadow: 0 1px 2px #fff;
+      right: 60px;
+      width: 120px;
+      color: #fff;
+      text-shadow: none;
+      text-align: right;
+      background: none;
+      padding-right: 0;
+      border-radius: 0;
+      box-sizing: border-box;
     }
-    .label.jio   { top: 36%; color: rgba(25, 25, 112, 0.95);}
-    .label.voda  { top: 68%; color: rgba(255, 165, 0, 0.9);}
-    .label.airtel{ top: 85%; color: rgba(255, 0, 0, 0.9);}
+    .label.jio   { top: 36%; }
+    .label.voda  { top: 68%; }
+    .label.airtel{ top: 85%; }
   </style>
 </head>
 <body>
@@ -61,6 +68,9 @@
       "Q1 2021", "Q2 2021", "Q3 2021", "Q4 2021", "Q1 2022", "Q2 2022", "Q3 2022", 
       "Q4 2022", "Q1 2023", "Q2 2023", "Q3 2023", "Q4 2023", "Q1 2024", "Q2 2024", 
       "Q3 2024", "Q4 2024", "Q1 2025", "Q2 2025", "Q3 2025", "Q4 2025"
+    ];
+    const quartersToShow = [
+      "Q4 2019", "Q4 2020", "Q4 2021", "Q4 2022", "Q4 2023", "Q4 2024", "Q4 2025"
     ];
     const data = {
       labels: labels,
@@ -109,9 +119,11 @@
               font: { size: 13 },
               maxRotation: 0,
               minRotation: 0,
-              callback: function(_, index) {
-                return labels[index].includes("Q4") ? labels[index] : '';
-              }
+              callback: function(value, index, ticks) {
+                const label = labels[index];
+                return quartersToShow.includes(label) ? label : null;
+              },
+              autoSkip: false
             }
           },
           y: {
