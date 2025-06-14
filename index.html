@@ -46,7 +46,7 @@
         padding: 0 1rem;
     }
     /* Orange enclosures */
-    .segment-intro, .segment-follow {
+    .segment-intro, .segment-follow, .segment-explain {
         background: #fff;
         border-radius: 14px;
         box-shadow: 0 2px 14px rgba(255,128,0,0.10);
@@ -139,7 +139,7 @@
       .chart-img-wrapper iframe { max-width: 99vw; }
     }
     @media (max-width: 900px) {
-        .container, .intro-section, .segment-intro, .segment-follow, .segment, .chart-section { padding: 0.7rem; }
+        .container, .intro-section, .segment-intro, .segment-follow, .segment-explain, .segment, .chart-section { padding: 0.7rem; }
         .chart-section { padding-top: 1.2rem; }
         header h1 { font-size: 1.5rem; }
         .segment-title { font-size: 1.25rem; }
@@ -179,6 +179,21 @@
             loading="lazy"
             title="Market Share of Indian Telcos (2023)">
         </iframe>
+    </div>
+    <!-- ORANGE EXPLANATION ENCLOSURE FOR THE BLACK CHART -->
+    <div class="container">
+      <section class="segment-explain">
+        <div class="chart-section">
+          <div class="chart-title">Explaining the Market Share Chart</div>
+          <div class="chart-story">
+            This area chart visualizes the shifting market share among India's major telecom operators since the Vodafone-Idea merger in 2018. It reveals how Jio and Airtel have steadily captured more subscribers, while Vodafone Idea (Vi) has seen a significant drop in its user base. The chart underscores the impact of aggressive pricing strategies, network investments, and industry consolidation on subscriber dynamics. Ultimately, it highlights the competitive pressures and consumer choices that continue to reshape India's telecom landscape.
+          </div>
+          <div class="tools-used">
+            <span class="tools-used-title">Tools Used:</span><br>
+            Chart.js, HTML, TRAI Data
+          </div>
+        </div>
+      </section>
     </div>
     <div class="container">
         <!-- SECOND ORANGE ENCLOSURE AND REST OF YOUR CONTENT -->
