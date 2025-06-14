@@ -21,7 +21,7 @@
     .headline,
     .subhead,
     .caption {
-      margin-left: 65px; /* Adjusted to align with the chart */
+      margin-left: 65px;
     }
 
     .headline {
@@ -53,6 +53,7 @@
       width: 700px;
       height: 500px;
       position: relative;
+      padding-left: 50px; /* Fix Y-axis clipping */
     }
 
     canvas {
@@ -65,7 +66,7 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      margin-left: 0px; /* Tighter to the chart */
+      margin-left: 0px;
       margin-top: 20px;
       font-weight: bold;
       font-size: 12px;
@@ -94,7 +95,7 @@
 </head>
 <body>
   <div class="container">
-    <div class="headline">Jio, Airtel eating into Vodafone’s market share1</div>
+    <div class="headline">Jio, Airtel eating into Vodafone’s market shareeeeeeeeeeeeeeeeeeee</div>
     <div class="subhead">
       The 2018 Vodafone-Idea merger failed to stem their subscriber bleed. Rivals Jio and Airtel have since gained users at the debt-ridden telco’s expense.
     </div>
@@ -174,6 +175,7 @@
               font: { size: 12 },
               maxRotation: 0,
               minRotation: 0,
+              maxTicksLimit: 8,  // ← Show more Q4s
               callback: function(_, index) {
                 return labels[index].includes("Q4") ? labels[index] : '';
               }
