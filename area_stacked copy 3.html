@@ -6,28 +6,49 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     body {
-      margin: 0;
+      margin: 28px;
       font-family: Helvetica, Arial, sans-serif;
-      background: #fff;
+      max-width: 860px;
+      position: relative;
+    }
+    .headline {
+      font-family: 'Helvetica Rounded', 'Arial Rounded MT Bold', Arial, sans-serif;
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      margin-left: 40px;
+    }
+    .subhead {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 15px;
+      font-weight: normal;
+      margin-bottom: 10px;
+      max-width: 700px;
+      margin-left: 40px;
+    }
+    .caption {
+      font-family: Helvetica, Arial, sans-serif;
+      font-weight: bold;
+      font-size: 13px;
+      margin-bottom: 22px;
+      margin-left: 40px;
     }
     .chart-wrapper {
       position: relative;
       width: 100%;
-      max-width: 1000px;
-      height: 600px;
-      margin: 40px auto;
-      background: #fff;
-      border-radius: 6px;
-      box-shadow: 0 1px 3px rgba(36,48,94,0.11);
-      min-width: 0;
-      overflow: visible !important;
+      max-width: 860px;
+      margin: 0 auto;
+      min-height: 480px;
     }
     canvas {
       width: 100% !important;
-      height: 100% !important;
+      max-width: 860px;
+      height: 470px !important;
       display: block;
+      margin: 0 auto;
       background: #fff;
       border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(36,48,94,0.11);
     }
     .label {
       position: absolute;
@@ -35,30 +56,52 @@
       font-family: Helvetica, Arial, sans-serif;
       font-size: 13px;
       pointer-events: none;
-      right: 8px;
+      right: 0;
       text-align: left;
-      width: 90px;
+      width: 100px;
       text-shadow: 0 1px 2px #fff;
     }
-    .label.jio { top: 36%; color: rgba(25, 25, 112, 0.95);}
-    .label.voda { top: 68%; color: rgba(255, 165, 0, 0.9);}
-    .label.airtel { top: 85%; color: rgba(255, 0, 0, 0.9);}
+    .label.jio {
+      top: 36%;
+      color: rgba(25, 25, 112, 0.95);
+    }
+    .label.voda {
+      top: 68%;
+      color: rgba(255, 165, 0, 0.9);
+    }
+    .label.airtel {
+      top: 85%;
+      color: rgba(255, 0, 0, 0.9);
+    }
+    @media (max-width: 900px) {
+      body, .chart-wrapper, canvas { max-width: 100vw; }
+      .headline, .subhead, .caption { margin-left: 8px; max-width: 95vw; }
+      .label { width: 70px; }
+    }
   </style>
 </head>
 <body>
+  <div class="headline">Jio, Airtel eating into Vodafone’s market share</div>
+  <div class="subhead">
+    The 2018 Vodafone-Idea merger failed to stem their subscriber bleed. Rivals Jio and Airtel have since gained users at the debt-ridden telco’s expense.
+  </div>
+  <div class="caption">Market share of Indian telcos since Vodafone-Idea merger</div>
+
   <div class="chart-wrapper">
     <canvas id="telcoChart"></canvas>
     <div class="label jio">Jio</div>
     <div class="label voda">Vodafone Idea</div>
     <div class="label airtel">Airtel</div>
   </div>
+
   <script>
     const labels = [
-      "Q2 2019","Q3 2019","Q4 2019","Q1 2020","Q2 2020","Q3 2020","Q4 2020",
-      "Q1 2021","Q2 2021","Q3 2021","Q4 2021","Q1 2022","Q2 2022","Q3 2022",
-      "Q4 2022","Q1 2023","Q2 2023","Q3 2023","Q4 2023","Q1 2024","Q2 2024",
-      "Q3 2024","Q4 2024","Q1 2025","Q2 2025","Q3 2025","Q4 2025"
+      "Q2 2019", "Q3 2019", "Q4 2019", "Q1 2020", "Q2 2020", "Q3 2020", "Q4 2020", 
+      "Q1 2021", "Q2 2021", "Q3 2021", "Q4 2021", "Q1 2022", "Q2 2022", "Q3 2022", 
+      "Q4 2022", "Q1 2023", "Q2 2023", "Q3 2023", "Q4 2023", "Q1 2024", "Q2 2024", 
+      "Q3 2024", "Q4 2024", "Q1 2025", "Q2 2025", "Q3 2025", "Q4 2025"
     ];
+
     const data = {
       labels: labels,
       datasets: [
@@ -91,6 +134,7 @@
         }
       ]
     };
+
     const config = {
       type: 'line',
       data: data,
@@ -131,6 +175,7 @@
         }
       }
     };
+
     new Chart(document.getElementById('telcoChart'), config);
   </script>
 </body>
