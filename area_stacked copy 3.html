@@ -14,6 +14,12 @@
       background: white;
     }
 
+    .scroll-container {
+      overflow-x: auto;
+      overflow-y: hidden;
+      width: 100vw;
+    }
+
     .container {
       width: 1200px;
     }
@@ -21,7 +27,7 @@
     .headline,
     .subhead,
     .caption {
-      margin-left: 70px; /* Shift text to align with x-axis */
+      margin-left: 50px; /* adjusted to bring text more left */
     }
 
     .headline {
@@ -78,7 +84,7 @@
 
     .label.jio {
       color: rgba(25, 25, 112, 0.95);
-      margin-top: 200px; /* Manually fine-tuned */
+      margin-top: 200px;
     }
 
     .label.voda {
@@ -93,22 +99,24 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="headline">Jio, Airtel eating into Vodafone’s market share</div>
-    <div class="subhead">
-      The 2018 Vodafone-Idea merger failed to stem their subscriber bleed. Rivals Jio and Airtel have since gained users at the debt-ridden telco’s expense.
-    </div>
-    <div class="caption">Market share of Indian telcos since Vodafone-Idea merger</div>
-
-    <div class="chart-label-wrapper">
-      <div class="chart-wrapper">
-        <canvas id="telcoChart"></canvas>
+  <div class="scroll-container">
+    <div class="container">
+      <div class="headline">Jio, Airtel eating into Vodafone’s market share</div>
+      <div class="subhead">
+        The 2018 Vodafone-Idea merger failed to stem their subscriber bleed. Rivals Jio and Airtel have since gained users at the debt-ridden telco’s expense.
       </div>
+      <div class="caption">Market share of Indian telcos since Vodafone-Idea merger</div>
 
-      <div class="labels">
-        <div class="label jio">Jio</div>
-        <div class="label voda">Vodafone Idea</div>
-        <div class="label airtel">Airtel</div>
+      <div class="chart-label-wrapper">
+        <div class="chart-wrapper">
+          <canvas id="telcoChart"></canvas>
+        </div>
+
+        <div class="labels">
+          <div class="label jio">Jio</div>
+          <div class="label voda">Vodafone Idea</div>
+          <div class="label airtel">Airtel</div>
+        </div>
       </div>
     </div>
   </div>
