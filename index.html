@@ -60,20 +60,21 @@
     }
     .segment-big-chart-enclosure {
         background: #fff;
-        border-radius: 14px;
+        border-radius: 18px;
         box-shadow: 0 2px 20px rgba(36,48,94,0.12);
-        border: 3.5px solid #111;
+        border: 4px solid #111;
         margin-bottom: 2.5rem;
-        padding: 2.2rem 1.5rem 2rem;
-        max-width: 1050px;
+        padding: 2.5rem 2rem 2.5rem;
+        max-width: 1300px;
         margin-left: auto;
         margin-right: auto;
+        min-width: 350px;
     }
     .chart-title-big {
         font-size: 1.6rem;
         font-weight: 700;
         color: #222;
-        margin-bottom: 1.1rem;
+        margin-bottom: 1.5rem;
     }
 
     .chart-section {
@@ -101,10 +102,10 @@
     }
     .chart-img-wrapper iframe {
         width: 100%;
-        height: 480px;
-        max-width: 1000px;
+        height: 700px;
+        max-width: 1200px;
         border: none;
-        border-radius: 6px;
+        border-radius: 8px;
         box-shadow: 0 1px 3px rgba(36,48,94,0.11);
         display: block;
         margin: 0 auto;
@@ -135,8 +136,9 @@
     .flourish-embed {
         margin: 2rem 0;
     }
-    @media (max-width: 1050px) {
+    @media (max-width: 1400px) {
       .segment-big-chart-enclosure { max-width: 98vw; }
+      .chart-img-wrapper iframe { max-width: 98vw; }
     }
     @media (max-width: 900px) {
         .container, .intro-section, .segment-intro, .segment-follow, .segment, .chart-section { padding: 0.7rem; }
@@ -147,7 +149,7 @@
         .segment-big-chart-enclosure { padding: 1rem 0.3rem 1.2rem; }
     }
     @media (max-width: 600px) {
-        .chart-img-wrapper iframe { height: 240px; }
+        .chart-img-wrapper iframe { height: 320px; }
     }
     </style>
 </head>
@@ -174,6 +176,7 @@
             <div class="chart-title chart-title-big">Market Share of Indian Telcos (2023)</div>
             <iframe 
                 src="https://ajententerprises.github.io/Aleef-s-Data-Portfolio/area_stacked%20copy%203.html"
+                style="width:1200px; height:700px; border:none; display:block; margin:0 auto; background:#fff;"
                 allowfullscreen
                 loading="lazy"
                 title="Market Share of Indian Telcos (2023)">
