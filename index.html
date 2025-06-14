@@ -155,6 +155,12 @@
         color: #444;
         line-height: 1.5;
     }
+    /* Border color variations for chart and explanation enclosures */
+    .border-black  { border-color: #111 !important; }
+    .border-blue   { border-color: #1e90ff !important; }
+    .border-red    { border-color: #e74c3c !important; }
+    .border-yellow { border-color: #f1c40f !important; }
+    .border-purple { border-color: #9b59b6 !important; }
     @media (max-width: 1000px) {
       .segment-big-chart-enclosure { max-width: 99vw; }
       .chart-img-wrapper iframe { max-width: 99vw; }
@@ -194,8 +200,8 @@
     </section>
 </div>
 
-<!-- 1st chart: Chart.js area chart (iframe) -->
-<div class="segment-big-chart-enclosure">
+<!-- 1st chart: Black border -->
+<div class="segment-big-chart-enclosure border-black">
     <div class="chart-title chart-title-big">Market Share of Indian Telcos (2023)</div>
     <iframe 
         src="https://ajententerprises.github.io/Aleef-s-Data-Portfolio/area_stacked%20copy%203.html"
@@ -206,7 +212,7 @@
     </iframe>
 </div>
 <div class="container">
-    <section class="segment-explain">
+    <section class="segment-explain border-black">
         <div class="explain-body">
             This area chart visualizes the shifting market share among India's major telecom operators since the Vodafone-Idea merger in 2018. It reveals how Jio and Airtel have steadily captured more subscribers, while Vodafone Idea (Vi) has seen a significant drop in its user base. The chart underscores the impact of aggressive pricing strategies, network investments, and industry consolidation on subscriber dynamics. Ultimately, it highlights the competitive pressures and consumer choices that continue to reshape India's telecom landscape.
         </div>
@@ -217,15 +223,15 @@
     </section>
 </div>
 
-<!-- 2nd chart: Tariff Revisions by Telcos (PNG) -->
-<div class="segment-big-chart-enclosure">
+<!-- 2nd chart: Blue border -->
+<div class="segment-big-chart-enclosure border-blue">
     <div class="chart-title chart-title-big">Tariff Revisions by Telcos Over Time</div>
     <div class="chart-img-wrapper">
         <img src="tariff final-01.png" alt="Tariff Revisions by Telcos">
     </div>
 </div>
 <div class="container">
-    <section class="segment-explain">
+    <section class="segment-explain border-blue">
         <div class="explain-body">
             This line graph tracks key tariff hikes by India’s major telcos since Jio’s market entry. It highlights three major rounds of price revisions that reset the baseline for ARPU (Average Revenue Per User) in the industry.
         </div>
@@ -236,15 +242,15 @@
     </section>
 </div>
 
-<!-- 3rd chart: Mobile Data Usage After 5G Rollout (PNG) -->
-<div class="segment-big-chart-enclosure">
+<!-- 3rd chart: Red border -->
+<div class="segment-big-chart-enclosure border-red">
     <div class="chart-title chart-title-big">Mobile Data Usage After 5G Rollout</div>
     <div class="chart-img-wrapper">
         <img src="telcos data usage with 5g rollout-01.png" alt="5G Data Usage Growth">
     </div>
 </div>
 <div class="container">
-    <section class="segment-explain">
+    <section class="segment-explain border-red">
         <div class="explain-body">
             This chart shows quarterly mobile data consumption in India, highlighting the surge after the 5G launch. Jio and Airtel dominate data usage, reflecting customer uptake and expanding network coverage.
         </div>
@@ -255,15 +261,15 @@
     </section>
 </div>
 
-<!-- 4th chart: TV Ad Revenue Growth (PNG) -->
-<div class="segment-big-chart-enclosure">
+<!-- 4th chart: Yellow border -->
+<div class="segment-big-chart-enclosure border-yellow">
     <div class="chart-title chart-title-big">Ad Revenue Growth Across Broadcasters</div>
     <div class="chart-img-wrapper">
         <img src="ad rev-01.png" alt="TV Ad Revenue Growth">
     </div>
 </div>
 <div class="container">
-    <section class="segment-explain">
+    <section class="segment-explain border-yellow">
         <div class="explain-body">
             This bar chart compares ad revenue growth across India's major TV broadcasters from FY21 to FY23. Star and Zee show notable rebounds, signaling a return in advertiser confidence.
         </div>
@@ -274,8 +280,8 @@
     </section>
 </div>
 
-<!-- 5th chart: Flourish embed -->
-<div class="segment-big-chart-enclosure">
+<!-- 5th chart: Purple border -->
+<div class="segment-big-chart-enclosure border-purple">
     <div class="chart-title chart-title-big">A Race Against Time—and Inequality</div>
     <div class="chart-img-wrapper">
         <div class="flourish-embed flourish-bar-chart-race" data-src="visualisation/6689841">
@@ -287,7 +293,7 @@
     </div>
 </div>
 <div class="container">
-    <section class="segment-explain">
+    <section class="segment-explain border-purple">
         <div class="explain-body">
             This animated bar chart race tracks the percentage of population fully vaccinated in various countries until July 2021. It highlights how high-income countries surged ahead early, leaving others behind. The widening gap reflects the systemic inequality in global health access.
         </div>
