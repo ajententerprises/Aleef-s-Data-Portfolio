@@ -87,6 +87,13 @@
         border-radius: 6px;
         box-shadow: 0 1px 3px rgba(36,48,94,0.11);
     }
+    .chart-img-wrapper iframe {
+        width: 100%;
+        height: 600px;
+        border: none;
+        border-radius: 6px;
+        box-shadow: 0 1px 3px rgba(36,48,94,0.11);
+    }
     .chart-story {
         font-size: 1.08rem;
         color: #444;
@@ -141,15 +148,18 @@
 
             <section class="chart-section">
                 <div class="chart-title">Market Share of Indian Telcos (2023)</div>
-                <div class="chart-img-wrapper">
-                    <img src="mkt share telcos-01.png" alt="Market Share of Indian Telcos">
-                </div>
+               <div class="chart-img-wrapper" style="overflow: hidden;">
+    <iframe 
+        src="https://ajententerprises.github.io/Aleef-s-Data-Portfolio/area_stacked%20copy%203.html"
+        style="width: 100%; max-width: 860px; height: 580px; border: none; display: block; margin: 0 auto;">
+    </iframe>
+</div>
                 <div class="chart-story">
                     This donut chart visualizes the wireless subscriber base distribution among India's major telecom players as of 2023. Jio continues to lead, followed by Airtel and Vi. The chart shows how consolidation and customer churn have reshaped market dynamics.
                 </div>
                 <div class="tools-used">
                     <span class="tools-used-title">Tools Used:</span><br>
-                    Adobe Illustrator, TRAI Data
+                    Chart.js, HTML, TRAI Data
                 </div>
             </section>
 
