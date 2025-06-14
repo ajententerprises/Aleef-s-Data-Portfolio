@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>My Data Visualization Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
+  <meta charset="UTF-8">
+  <title>My Data Visualization Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
     h1, h2, h3, h4, h5, h6,
     .segment-title,
     .chart-title,
@@ -28,7 +28,6 @@
     header h1 {
         color: #fff;
         font-size: 2.5rem;
-        font-family: 'Helvetica Neue', Helvetica, 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
         letter-spacing: 0.04em;
         margin-bottom: 0.3em;
     }
@@ -49,24 +48,19 @@
         background: #fff;
         border-radius: 16px;
         border: 3px solid #ff8000;
-        box-shadow: none;
-        padding: 2.3rem 2.1rem 2.3rem 2.1rem;
+        padding: 2.3rem;
         margin-bottom: 2.5rem;
-        max-width: 99vw;
     }
     .segment-intro-title {
         font-size: 2.1rem;
         font-weight: 700;
         color: #ff8000;
         margin-bottom: 1.1rem;
-        line-height: 1.15;
-        letter-spacing: 0.01em;
     }
     .segment-intro-desc {
         font-size: 1.08rem;
         color: #4a565e;
         line-height: 1.5;
-        margin: 0;
     }
     .segment-big-chart-enclosure {
         background: #fff;
@@ -74,10 +68,9 @@
         box-shadow: 0 2px 20px rgba(36,48,94,0.12);
         border: 4px solid #111;
         margin: 3rem auto 1.1rem auto;
-        padding: 2.5rem 2rem 2.5rem;
+        padding: 2.5rem 2rem;
         max-width: 950px;
         width: 98vw;
-        min-width: 320px;
     }
     .chart-title-big {
         font-size: 1.5rem;
@@ -89,9 +82,9 @@
         text-align: center;
         margin-bottom: 1.3rem;
     }
-    .chart-img-wrapper img {
+    .chart-img-wrapper img,
+    .chart-img-wrapper iframe {
         max-width: 96%;
-        height: auto;
         border-radius: 6px;
         box-shadow: 0 1px 3px rgba(36,48,94,0.11);
         display: block;
@@ -100,12 +93,7 @@
     .chart-img-wrapper iframe {
         width: 100%;
         height: 480px;
-        max-width: 900px;
         border: none;
-        border-radius: 8px;
-        box-shadow: 0 1px 3px rgba(36,48,94,0.11);
-        display: block;
-        margin: 0 auto;
         background: #fff;
     }
     .segment-explain {
@@ -115,9 +103,6 @@
         box-shadow: 0 2px 14px rgba(255,128,0,0.10);
         border: 2.5px solid #ff8000;
         padding: 2rem 1.5rem 1.5rem;
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
     }
     .explain-body {
         font-size: 1.08rem;
@@ -128,7 +113,6 @@
     .tools-used {
         background: #f3f6fb;
         border-left: 4px solid #ff8000;
-        margin: 1.2rem 0 0.5rem;
         padding: 0.9rem 1.2rem;
         border-radius: 5px;
         font-size: 1.08rem;
@@ -142,135 +126,155 @@
         text-transform: uppercase;
         letter-spacing: 0.04em;
     }
-    .segment-desc {
-        font-size: 1.08rem;
-        color: #444;
-        line-height: 1.5;
-    }
 
+    /* Footer */
     footer {
-        background-color: #111;
-        color: #eee;
+        background: #222;
+        color: #fff;
         text-align: center;
-        padding: 1.8rem 0;
+        padding: 1.5rem 1rem;
         font-size: 0.95rem;
         margin-top: 3rem;
     }
 
     /* Scroll to top button */
-    #scrollTopBtn {
-        display: none;
+    #scrollToTopBtn {
         position: fixed;
-        bottom: 30px;
-        right: 30px;
-        z-index: 99;
-        border: none;
-        outline: none;
+        bottom: 40px;
+        right: 40px;
         background-color: #ff8000;
         color: white;
+        border: none;
+        padding: 0.8rem 1rem;
+        font-size: 1rem;
+        border-radius: 5px;
         cursor: pointer;
-        padding: 12px 16px;
-        border-radius: 8px;
-        font-size: 16px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-        animation: pulse 2.5s infinite;
+        display: none;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+    #scrollToTopBtn:hover {
+        background-color: #e66f00;
     }
 
-    @keyframes pulse {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.07); }
-        100% { transform: scale(1); }
-    }
-
-    @media (max-width: 1000px) {
-        .segment-big-chart-enclosure { max-width: 99vw; }
-        .chart-img-wrapper iframe { max-width: 99vw; }
-    }
-    @media (max-width: 900px) {
-        .container, .intro-section, .segment-intro-highlight, .segment-explain, .segment, .chart-section { padding: 0.7rem; }
-        .segment-big-chart-enclosure { padding: 1rem 0.3rem 1.2rem; }
-    }
     @media (max-width: 700px) {
-        .segment-intro-title { font-size: 1.35rem; }
-        .segment-intro-desc { font-size: 1.08rem; }
-        .segment-intro-highlight { padding: 1.2rem 0.6rem; }
+      .segment-intro-title { font-size: 1.35rem; }
+      .segment-intro-desc, .explain-body, .tools-used { font-size: 1rem; }
     }
     @media (max-width: 600px) {
-        .chart-img-wrapper iframe { height: 250px; }
+      .chart-img-wrapper iframe { height: 250px; }
     }
-    </style>
+  </style>
 </head>
 <body>
 
 <header>
-    <h1>My Data Visualization Portfolio</h1>
+  <h1>My Data Visualization Portfolio</h1>
 </header>
 
 <div class="intro-section">
-    <p>
-        Welcome to my portfolio of data visualizations. Here, I present a selection of charts that reflect my approach to turning raw data into meaningful stories. Each visualization is accompanied by a narrative that explains its context, purpose, and the insights it reveals.
-    </p>
+  <p>
+    Welcome to my portfolio of data visualizations. Here, I present a selection of charts that reflect my approach to turning raw data into meaningful stories. Each visualization is accompanied by a narrative that explains its context, purpose, and the insights it reveals.
+  </p>
 </div>
 
 <div class="container">
-    <section class="segment-intro-highlight">
-        <div class="segment-intro-title">
-            India’s Telecom Story: Growth, Pricing and the 5G Shift
-        </div>
-        <div class="segment-intro-desc">
-            This segment captures major trends shaping India’s telecom sector—from competitive dynamics and market consolidation to tariff changes and data usage growth driven by 5G. These charts explore how customer behavior and corporate strategy have evolved post-Jio's entry and in the wake of new technological rollouts.
-        </div>
-    </section>
+  <section class="segment-intro-highlight">
+    <div class="segment-intro-title">India’s Telecom Story: Growth, Pricing and the 5G Shift</div>
+    <div class="segment-intro-desc">
+      This segment captures major trends shaping India’s telecom sector—from competitive dynamics and market consolidation to tariff changes and data usage growth driven by 5G.
+    </div>
+  </section>
 </div>
 
-<!-- Your existing chart/chart-explanation blocks stay unchanged -->
-
-<!-- Example chart block (1st) -->
+<!-- CHART 1 -->
 <div class="segment-big-chart-enclosure">
-    <div class="chart-title chart-title-big">Market Share of Indian Telcos (2023)</div>
-    <iframe 
-        src="https://ajententerprises.github.io/Aleef-s-Data-Portfolio/area_stacked%20copy%203.html"
-        style="width: 100%; height: 480px; border: none; display: block; margin: 0 auto; background: #fff;"
-        allowfullscreen
-        loading="lazy"
-        title="Market Share of Indian Telcos (2023)">
-    </iframe>
+  <div class="chart-title chart-title-big">Market Share of Indian Telcos (2023)</div>
+  <iframe src="https://ajententerprises.github.io/Aleef-s-Data-Portfolio/area_stacked%20copy%203.html" allowfullscreen loading="lazy"></iframe>
 </div>
 <div class="container">
-    <section class="segment-explain">
-        <div class="explain-body">
-            This area chart visualizes the shifting market share among India's major telecom operators since the Vodafone-Idea merger in 2018.
-        </div>
-        <div class="tools-used">
-            <span class="tools-used-title">TOOLS USED:</span><br>
-            Chart.js, HTML, TRAI Data
-        </div>
-    </section>
+  <section class="segment-explain">
+    <div class="explain-body">Area chart showing telco market share shifts after Jio's rise. Vodafone Idea has declined while Jio and Airtel gained steadily.</div>
+    <div class="tools-used"><span class="tools-used-title">TOOLS USED:</span><br>Chart.js, HTML, TRAI Data</div>
+  </section>
 </div>
 
-<!-- Repeat the above pattern for remaining chart blocks -->
+<!-- CHART 2 -->
+<div class="segment-big-chart-enclosure">
+  <div class="chart-title chart-title-big">Tariff Revisions by Telcos Over Time</div>
+  <div class="chart-img-wrapper">
+    <img src="tariff final-01.png" alt="Tariff Revisions">
+  </div>
+</div>
+<div class="container">
+  <section class="segment-explain">
+    <div class="explain-body">Line graph of three major price hikes by telcos that reshaped revenue and consumer plans since 2019.</div>
+    <div class="tools-used"><span class="tools-used-title">TOOLS USED:</span><br>Illustrator, Company Filings</div>
+  </section>
+</div>
 
-<!-- Scroll to Top Button -->
-<button onclick="scrollToTop()" id="scrollTopBtn" title="Go to top">↑ Top</button>
+<!-- CHART 3 -->
+<div class="segment-big-chart-enclosure">
+  <div class="chart-title chart-title-big">Mobile Data Usage After 5G Rollout</div>
+  <div class="chart-img-wrapper">
+    <img src="telcos data usage with 5g rollout-01.png" alt="5G Data Usage">
+  </div>
+</div>
+<div class="container">
+  <section class="segment-explain">
+    <div class="explain-body">This chart shows the sharp rise in mobile data consumption post-5G rollout. Jio and Airtel lead in usage.</div>
+    <div class="tools-used"><span class="tools-used-title">TOOLS USED:</span><br>Excel, Illustrator</div>
+  </section>
+</div>
+
+<!-- CHART 4 -->
+<div class="segment-big-chart-enclosure">
+  <div class="chart-title chart-title-big">Ad Revenue Growth Across Broadcasters</div>
+  <div class="chart-img-wrapper">
+    <img src="ad rev-01.png" alt="Ad Revenue Growth">
+  </div>
+</div>
+<div class="container">
+  <section class="segment-explain">
+    <div class="explain-body">Bar chart comparing FY21–FY23 ad revenue for TV broadcasters like Star and Zee. Signals advertiser confidence rebound.</div>
+    <div class="tools-used"><span class="tools-used-title">TOOLS USED:</span><br>Excel, BARC India data</div>
+  </section>
+</div>
+
+<!-- CHART 5 -->
+<div class="segment-big-chart-enclosure">
+  <div class="chart-title chart-title-big">A Race Against Time—and Inequality</div>
+  <div class="chart-img-wrapper">
+    <div class="flourish-embed flourish-bar-chart-race" data-src="visualisation/6689841">
+      <script src="https://public.flourish.studio/resources/embed.js"></script>
+      <noscript>
+        <img src="https://public.flourish.studio/visualisation/6689841/thumbnail" width="100%" alt="bar-chart-race visualization" />
+      </noscript>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <section class="segment-explain">
+    <div class="explain-body">Flourish bar chart race showing global vaccination disparities until mid-2021. High-income countries sprinted ahead early.</div>
+    <div class="tools-used"><span class="tools-used-title">TOOLS USED:</span><br>Flourish</div>
+  </section>
+</div>
+
+<!-- Scroll-to-top button -->
+<button id="scrollToTopBtn" title="Go to top">↑ Top</button>
 
 <!-- Footer -->
 <footer>
-    &copy; 2025 Aleef Jahan. All rights reserved. | Designed with 📊 and 🧡
+  © 2025 Aleef Jahan. Built with HTML, data, and a bit of orange ✦
 </footer>
 
 <script>
-function scrollToTop() {
+  const scrollBtn = document.getElementById("scrollToTopBtn");
+  window.onscroll = () => {
+    scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
+  };
+  scrollBtn.onclick = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-window.onscroll = function() {
-    const btn = document.getElementById("scrollTopBtn");
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        btn.style.display = "block";
-    } else {
-        btn.style.display = "none";
-    }
-};
+  };
 </script>
 
 </body>
