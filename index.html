@@ -141,23 +141,6 @@
     .border-black  { border-color: #111 !important; }
     .border-orange { border-color: #ff8000 !important; }
 
-    /* Scroll buttons */
-    .scroll-btn {
-        position: fixed;
-        right: 25px;
-        padding: 10px 14px;
-        font-size: 18px;
-        border: none;
-        border-radius: 50%;
-        background: #ff8000;
-        color: white;
-        cursor: pointer;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-        z-index: 1000;
-    }
-    .scroll-up { bottom: 80px; }
-    .scroll-down { bottom: 25px; }
-
     footer {
         background: #111;
         color: #fff;
@@ -277,22 +260,9 @@
   </section>
 </div>
 
-<!-- Scroll buttons -->
-<button onclick="scrollToTop()" class="scroll-btn scroll-up">⬆</button>
-<button onclick="scrollToBottom()" class="scroll-btn scroll-down">⬇</button>
-
 <!-- Footer -->
 <footer>
   &copy; 2025 Aleef Jahan. All rights reserved. | Built with HTML & data ❤
 </footer>
-
-<script>
-  function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-  function scrollToBottom() {
-    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-  }
-</script>
 </body>
 </html>
