@@ -1,253 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>My Data Visualization Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-    h1, h2, h3, h4, h5, h6,
-    .segment-title,
-    .chart-title,
-    .tools-used-title {
-        font-family: 'Helvetica Neue', Helvetica, 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-        letter-spacing: 0.02em;
-    }
-    body {
-        font-family: 'Segoe UI', Arial, sans-serif;
-        background: #f8f8f8;
-        margin: 0;
-        padding: 0;
-        font-size: 1.08rem;
-        color: #333;
-    }
-    header {
-        background: #ff8000;
-        padding: 2rem 1rem 1rem;
-        text-align: center;
-    }
-    header h1 {
-        color: #fff;
-        font-size: 2.5rem;
-        font-family: 'Helvetica Neue', Helvetica, 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-        letter-spacing: 0.04em;
-        margin-bottom: 0.3em;
-    }
-    .intro-section {
-        max-width: 750px;
-        margin: 1.5rem auto 2.5rem auto;
-        background: #fff;
-        border-radius: 10px;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-        padding: 1.5rem;
-    }
-    .container {
-        max-width: 800px;
-        margin: 0 auto 2rem;
-        padding: 0 1rem;
-    }
-    .segment-intro-highlight {
-        background: #ff8000;
-        border-radius: 16px;
-        border: 3px solid #ff8000;
-        box-shadow: none;
-        padding: 2.3rem 2.1rem 2.3rem 2.1rem;
-        margin-bottom: 2.5rem;
-        max-width: 99vw;
-    }
-    .segment-intro-title {
-        font-family: 'Helvetica Neue', Helvetica, Arial, 'Arial Nova', 'Nimbus Sans', sans-serif;
-        font-size: 2.1rem;
-        font-weight: 700;
-        color: #fff;
-        margin-bottom: 1.1rem;
-        line-height: 1.15;
-        letter-spacing: 0.01em;
-    }
-    .segment-intro-desc {
-        font-family: 'Segoe UI', Arial, sans-serif;
-        font-size: 1.08rem;
-        color: #111;
-        line-height: 1.5;
-        margin-bottom: 0;
-        margin-top: 0;
-        font-weight: 600;
-    }
-    .segment-big-chart-enclosure {
-        background: #fff;
-        border-radius: 18px;
-        box-shadow: 0 2px 20px rgba(36,48,94,0.12);
-        border: 4px solid #111;
-        margin: 3rem auto 1.1rem auto;
-        padding: 2.5rem 2rem 2.5rem;
-        max-width: 950px;
-        width: 98vw;
-        min-width: 320px;
-        border-width: 4px;
-    }
-    .chart-title-big {
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: #222;
-        margin-bottom: 1.2rem;
-    }
-    .chart-img-wrapper {
-        text-align: center;
-        margin-bottom: 1.3rem;
-    }
-    .chart-img-wrapper img {
-        max-width: 96%;
-        height: auto;
-        border-radius: 6px;
-        box-shadow: 0 1px 3px rgba(36,48,94,0.11);
-        display: block;
-        margin: 0 auto;
-    }
-    .chart-img-wrapper iframe {
-        width: 100%;
-        height: 480px;
-        max-width: 900px;
-        border: none;
-        border-radius: 8px;
-        box-shadow: 0 1px 3px rgba(36,48,94,0.11);
-        display: block;
-        margin: 0 auto;
-        background: #fff;
-    }
-    .segment-explain {
-        margin-top: 0;
-        margin-bottom: 2.5rem;
-        background: #fff;
-        border-radius: 14px;
-        box-shadow: 0 2px 14px rgba(255,128,0,0.10);
-        border: 4px solid #ff8000;
-        padding: 2rem 1.5rem 1.5rem;
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-        border-width: 4px;
-    }
-    .explain-body {
-        font-size: 1.08rem;
-        color: #444;
-        line-height: 1.5;
-        margin-bottom: 1.3rem;
-    }
-    .tools-used {
-        background: #f3f6fb;
-        border-left: 4px solid #ff8000;
-        margin: 1.2rem 0 0.5rem;
-        padding: 0.9rem 1.2rem;
-        border-radius: 5px;
-        font-size: 1.08rem;
-        color: #222;
-    }
-    .tools-used-title {
-        font-weight: 600;
-        color: #ff8000;
-        margin-bottom: 0.3rem;
-        font-size: 1.07rem;
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
-    }
-    .segment-desc {
-        font-size: 1.08rem;
-        color: #444;
-        line-height: 1.5;
-    }
-    .border-black  { border-color: #111 !important; }
-    .border-orange { border-color: #ff8000 !important; }
-    /* Footer and scroll buttons */
-    .site-footer {
-        background: #222;
-        color: #fff;
-        text-align: center;
-        padding: 1.5rem 1rem;
-        font-size: 1rem;
-        margin-top: 2.5rem;
-        letter-spacing: 0.01em;
-    }
-    .scroll-btns {
-        position: fixed;
-        right: 22px;
-        bottom: 30px;
-        display: flex;
-        flex-direction: column;
-        z-index: 100;
-        gap: 12px;
-    }
-    .scroll-btn {
-        background: #ff8000;
-        color: #fff;
-        border: none;
-        border-radius: 50%;
-        width: 48px;
-        height: 48px;
-        font-size: 1.6rem;
-        box-shadow: 0 3px 16px rgba(60,60,60,0.10);
-        cursor: pointer;
-        transition: background 0.2s, box-shadow 0.2s;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        outline: none;
-    }
-    .scroll-btn:hover,
-    .scroll-btn:focus {
-        background: #ff9500;
-        box-shadow: 0 4px 24px rgba(60,60,60,0.18);
-    }
-    @media (max-width: 1000px) {
-      .segment-big-chart-enclosure { max-width: 99vw; }
-      .chart-img-wrapper iframe { max-width: 99vw; }
-    }
-    @media (max-width: 900px) {
-        .container, .intro-section, .segment-intro-highlight, .segment-explain, .segment, .chart-section { padding: 0.7rem; }
-        .segment-big-chart-enclosure { padding: 1rem 0.3rem 1.2rem; }
-    }
-    @media (max-width: 700px) {
-      .segment-intro-title { font-size: 1.35rem; }
-      .segment-intro-desc { font-size: 1.08rem; }
-      .segment-intro-highlight { padding: 1.2rem 0.6rem 1.2rem 0.6rem; }
-    }
-    @media (max-width: 600px) {
-        .chart-img-wrapper iframe { height: 250px; }
-        .scroll-btn { width: 40px; height: 40px; font-size: 1.25rem; }
-    }
-    </style>
+<meta charset="UTF-8">
+<title>Aleef's Data Viz Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+h1, h2, h3, h4, h5, h6,
+.segment-title,
+.chart-title,
+.tools-used-title {
+    font-family: 'Helvetica Neue', Helvetica, 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+    letter-spacing: 0.02em;
+}
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f8f8f8;
+    margin: 0;
+    padding: 0;
+    font-size: 1.08rem;
+    color: #333;
+}
+header {
+    background: #ff8000;
+    padding: 2.5rem 1rem 2.2rem;
+    text-align: center;
+}
+header h1 {
+    color: #fff;
+    font-size: 4rem;
+    font-family: 'Helvetica Neue', Helvetica, 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+    letter-spacing: 0.04em;
+    margin-bottom: 0;
+    font-weight: 900;
+    line-height: 1.04;
+}
+.intro-text {
+    font-size: 1.25rem;
+    color: #222;
+    max-width: 950px;
+    width: 98vw;
+    min-width: 320px;
+    margin: 1.2rem auto 1.2rem auto;
+    text-align: justify;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    padding: 0 1rem;
+}
+.no-bottom-margin {
+    margin-bottom: 0 !important;
+}
+.segment-intro-highlight {
+    display: block;
+    margin: 0.9rem auto 2.5rem auto;
+    max-width: 950px;
+    width: 98vw;
+    min-width: 320px;
+    background: #ff8000;
+    border-radius: 32px;
+    border: 3px solid #ff8000;
+    box-shadow: none;
+    padding: 0.3rem 2.1rem 2.3rem 2.1rem;
+}
+.segment-intro-title,
+h2.segment-title {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 1.2rem;
+    line-height: 1.13;
+    letter-spacing: 0.01em;
+}
+.segment-intro-desc {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 1.25rem;
+    color: #111;
+    line-height: 1.5;
+    margin-bottom: 0;
+    margin-top: 0;
+    font-weight: 600;
+}
+.segment-big-chart-enclosure {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 20px rgba(36,48,94,0.12);
+    border: 4px solid #111;
+    margin: 0 auto 1.1rem auto;
+    padding: 2.5rem 2rem 2.5rem;
+    max-width: 950px;
+    width: 98vw;
+    min-width: 320px;
+    border-width: 4px;
+    margin-top: 0;
+    margin-bottom: 1.1rem;
+}
+.chart-heading-block {
+    margin-bottom: 1.1rem;
+    margin-top: 0.3rem;
+    text-align: left;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+}
+.chart1-heading {
+    font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, 'Arial Nova', 'Nimbus Sans', sans-serif;
+    font-weight: 900;
+    font-size: 2.1rem;
+    line-height: 1.14;
+    color: #111;
+    margin-bottom: 0.18em;
+    letter-spacing: 0;
+}
+.chart1-subhead {
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    font-size: 1.22rem;
+    font-weight: 400;
+    color: #222;
+    margin-bottom: 0.33em;
+    line-height: 1.37;
+    letter-spacing: 0;
+}
+.chart1-caption {
+    font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, 'Arial Nova', 'Nimbus Sans', sans-serif;
+    font-size: 1.07rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 0.2em;
+    line-height: 1.18;
+    letter-spacing: 0;
+}
+.chart-img-wrapper {
+    text-align: center;
+    margin-bottom: 1.3rem;
+}
+.chart-img-wrapper img {
+    max-width: 96%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(36,48,94,0.11);
+    display: block;
+    margin: 0 auto;
+}
+.chart-img-wrapper iframe {
+    width: 100%;
+    height: 480px;
+    max-width: 900px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(36,48,94,0.11);
+    display: block;
+    margin: 0 auto;
+    background: #fff;
+}
+.segment-explain {
+    margin-top: 0;
+    margin-bottom: 0.4rem;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 14px rgba(255,128,0,0.10);
+    border: 4px solid #ff8000;
+    padding: 2rem 1.5rem 1.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    border-width: 4px;
+}
+.chart-intro {
+    margin-bottom: 1.1rem !important;
+}
+h1 { font-size: 4rem; }
+h2, .segment-title, .segment-intro-title {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #ff8000;
+    margin-bottom: 0.9rem;
+    line-height: 1.13;
+}
+h3, .chart-headline {
+    font-size: 2.8rem;
+    font-weight: 900;
+    line-height: 1.1;
+    color: #222;
+    margin-bottom: 1.1rem;
+    margin-top: 0;
+    letter-spacing: -0.01em;
+}
+h4 { font-size: 1.18rem; }
+.explain-body {
+    font-size: 1.25rem;
+    color: #444;
+    line-height: 1.5;
+    margin-bottom: 1.3rem;
+}
+.tools-used {
+    background: #f3f6fb;
+    border-left: 4px solid #ff8000;
+    margin: 1.2rem 0 0.5rem;
+    padding: 0.9rem 1.2rem;
+    border-radius: 5px;
+    font-size: 1.08rem;
+    color: #222;
+}
+.tools-used-title {
+    font-weight: 600;
+    color: #ff8000;
+    margin-bottom: 0.3rem;
+    font-size: 1.07rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+.segment-desc {
+    font-size: 1.08rem;
+    color: #444;
+    line-height: 1.5;
+}
+.border-black  { border-color: #111 !important; }
+.border-orange { border-color: #ff8000 !important; }
+.site-footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 1rem;
+    margin-top: 2.5rem;
+    letter-spacing: 0.01em;
+}
+.scroll-btns {
+    position: fixed;
+    right: 22px;
+    bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    gap: 12px;
+}
+.scroll-btn {
+    background: #ff8000;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    font-size: 1.6rem;
+    box-shadow: 0 3px 16px rgba(60,60,60,0.10);
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+}
+.scroll-btn:hover,
+.scroll-btn:focus {
+    background: #ff9500;
+    box-shadow: 0 4px 24px rgba(60,60,60,0.18);
+}
+@media (max-width: 1000px) {
+  .segment-big-chart-enclosure,
+  .segment-intro-highlight, .intro-text { max-width: 99vw; }
+  .chart-img-wrapper iframe { max-width: 99vw; }
+}
+@media (max-width: 900px) {
+    .container, .intro-text, .segment-intro-highlight, .segment-explain, .segment, .chart-section { padding: 0.7rem; }
+    .segment-big-chart-enclosure { padding: 1rem 0.3rem 1.2rem; }
+}
+@media (max-width: 700px) {
+  .segment-intro-title, h2.segment-title, .segment-title { font-size: 1.6rem !important; }
+  .segment-intro-desc { font-size: 1.08rem; }
+  .segment-intro-highlight, .intro-text { padding: 1.2rem 0.6rem 1.2rem 0.6rem; }
+  h3, .chart-headline { font-size: 1.35rem; }
+  h1 { font-size: 2.2rem; }
+  .intro-text, .explain-body { font-size: 1.08rem; }
+  .chart1-heading { font-size: 1.25rem; }
+  .chart1-subhead { font-size: 1rem; }
+  .chart1-caption { font-size: 0.95rem; }
+}
+@media (max-width: 600px) {
+    .chart-img-wrapper iframe { height: 250px; }
+    .scroll-btn { width: 40px; height: 40px; font-size: 1.25rem; }
+}
+</style>
 </head>
 <body>
 <a id="top"></a>
 <header>
-    <h1>My Data Visualization Portfolio</h1>
+    <h1>Aleef's Data Viz Portfolio</h1>
 </header>
-<div class="intro-section">
-    <p>
-        Welcome to my portfolio of data visualizations. Here, I present a selection of charts that reflect my approach to turning raw data into meaningful stories. Each visualization is accompanied by a narrative that explains its context, purpose, and the insights it reveals.
-    </p>
-</div>
-<div class="container">
-    <!-- FIRST ORANGE ENCLOSURE (intro, now with orange background and white heading) -->
-    <section class="segment-intro-highlight">
-        <div class="segment-intro-title">
-            India’s Telecom Story: Growth, Pricing and the 5G Shift
-        </div>
-        <div class="segment-intro-desc">
-            This segment captures major trends shaping India’s telecom sector—from competitive dynamics and market consolidation to tariff changes and data usage growth driven by 5G. These charts explore how customer behavior and corporate strategy have evolved post-Jio's entry and in the wake of new technological rollouts.
+<p class="intro-text">
+    Welcome to my portfolio of data visualizations. Here, I present a selection of charts that reflect my approach to turning raw data into meaningful stories. Each visualization is accompanied by a narrative that explains its context, purpose, and the insights it reveals.
+</p>
+
+<!-- TELECOM SEGMENT -->
+<section class="segment-intro-highlight">
+    <h2 class="segment-title">India’s Telecom Shake-Up</h2>
+    <div class="segment-intro-desc">
+        This segment captures major trends shaping India’s telecom sector—from competitive dynamics and market consolidation to tariff changes and data usage growth driven by 5G. These charts explore how customer behavior and corporate strategy have evolved post-Jio's entry and in the wake of new technological rollouts.
+    </div>
+</section>
+
+<!-- 1st chart: Black border -->
+<div class="container no-bottom-margin">
+    <section class="segment-explain border-black chart-intro">
+        <h3 class="chart-headline">Market Share of Indian Telcos</h3>
+        <div class="explain-body">
+            Lorem ipsum dolor sit amet, chart 1 gibberish goes here lorem ipsum dolor sit amet consectetur.
         </div>
     </section>
 </div>
-
-<!-- 1st chart: Black border -->
 <div class="segment-big-chart-enclosure border-black">
-    <div class="chart-title chart-title-big">Market Share of Indian Telcos (2023)</div>
-    <iframe 
-        src="https://ajententerprises.github.io/Aleef-s-Data-Portfolio/area_stacked_copy_3.html"
-        style="width: 100%; height: 480px; border: none; display: block; margin: 0 auto; background: #fff;"
-        allowfullscreen
-        loading="lazy"
-        title="Market Share of Indian Telcos (2023)">
-    </iframe>
+    <!-- Chart 1 custom heading block, styled per screenshot -->
+    <div class="chart-heading-block">
+        <div class="chart1-heading">
+            Jio, Airtel eating into Vodafone's market share
+        </div>
+        <div class="chart1-subhead">
+            The 2018 Vodafone-Idea merger failed to stem their subscriber bleed. Rivals Jio and Airtel have since gained users at the debt-ridden telco's expense.
+        </div>
+        <div class="chart1-caption">
+            Market share of Indian telcos since Vodafone-Idea merger
+        </div>
+    </div>
+    <div class="chart-img-wrapper">
+        <iframe 
+            src="area_stacked_copy_3.html"
+            style="width: 100%; height: 480px; border: none; display: block; margin: 0 auto; background: #fff;"
+            allowfullscreen
+            loading="lazy"
+            title="Market Share of Indian Telcos (2023)">
+        </iframe>
+    </div>
 </div>
+
 <div class="container">
     <section class="segment-explain border-black">
         <div class="explain-body">
@@ -260,9 +346,15 @@
     </section>
 </div>
 
-<!-- 2nd chart: Orange border -->
+<div class="container no-bottom-margin">
+    <section class="segment-explain border-orange chart-intro">
+        <h3 class="chart-headline">Tariff Revisions by Telcos Over Time</h3>
+        <div class="explain-body">
+            Lorem ipsum dolor sit amet, chart 2 gibberish goes here lorem ipsum dolor sit amet consectetur.
+        </div>
+    </section>
+</div>
 <div class="segment-big-chart-enclosure border-orange">
-    <div class="chart-title chart-title-big">Tariff Revisions by Telcos Over Time</div>
     <div class="chart-img-wrapper">
         <img src="tariff_final_01.png" alt="Tariff Revisions by Telcos">
     </div>
@@ -279,9 +371,15 @@
     </section>
 </div>
 
-<!-- 3rd chart: Black border -->
+<div class="container no-bottom-margin">
+    <section class="segment-explain border-black chart-intro">
+        <h3 class="chart-headline">Mobile Data Usage After 5G Rollout</h3>
+        <div class="explain-body">
+            Lorem ipsum dolor sit amet, chart 3 gibberish goes here lorem ipsum dolor sit amet consectetur.
+        </div>
+    </section>
+</div>
 <div class="segment-big-chart-enclosure border-black">
-    <div class="chart-title chart-title-big">Mobile Data Usage After 5G Rollout</div>
     <div class="chart-img-wrapper">
         <img src="telcos_data_usage_with_5g_rollout_01.png" alt="5G Data Usage Growth">
     </div>
@@ -298,9 +396,24 @@
     </section>
 </div>
 
+<!-- Segment break / intro -->
+<section class="segment-intro-highlight">
+    <h2 class="segment-title">Advertising Revenue Trends</h2>
+    <div class="segment-intro-desc">
+        This is a generic section introduction. Use this space to introduce the next set of charts, describe their focus, or provide any thematic transition for your data story. Replace this text with your own description when ready.
+    </div>
+</section>
+
 <!-- 4th chart: Orange border -->
+<div class="container no-bottom-margin">
+    <section class="segment-explain border-orange chart-intro">
+        <h3 class="chart-headline">Digital grabs nearly 50% of India’s ad revenue pie</h3>
+        <div class="explain-body">
+            Lorem ipsum dolor sit amet, chart 4 gibberish goes here lorem ipsum dolor sit amet consectetur.
+        </div>
+    </section>
+</div>
 <div class="segment-big-chart-enclosure border-orange">
-    <div class="chart-title chart-title-big">Ad Revenue Growth Across Broadcasters</div>
     <div class="chart-img-wrapper">
         <img src="ad_rev_01.png" alt="TV Ad Revenue Growth">
     </div>
@@ -318,8 +431,15 @@
 </div>
 
 <!-- 5th chart: Black border -->
+<div class="container no-bottom-margin">
+    <section class="segment-explain border-black chart-intro">
+        <h3 class="chart-headline">A Race Against Time—and Inequality</h3>
+        <div class="explain-body">
+            Lorem ipsum dolor sit amet, chart 5 gibberish goes here lorem ipsum dolor sit amet consectetur.
+        </div>
+    </section>
+</div>
 <div class="segment-big-chart-enclosure border-black">
-    <div class="chart-title chart-title-big">A Race Against Time—and Inequality</div>
     <div class="chart-img-wrapper">
         <div class="flourish-embed flourish-bar-chart-race" data-src="visualisation/6689841">
             <script src="https://public.flourish.studio/resources/embed.js"></script>
@@ -353,7 +473,7 @@
 
 <!-- Footer -->
 <footer class="site-footer" id="footer">
-     Hand-built with ❤️, broken, and rebuilt by Aleef Jahan.<br>
+     Hand-built, broken and rebuilt with ❤️ by Aleef Jahan.<br>
   Crafted using HTML and CSS.
 </footer>
 
