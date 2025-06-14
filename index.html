@@ -45,8 +45,7 @@
         margin: 0 auto 2rem;
         padding: 0 1rem;
     }
-
-    /* Custom segment enclosures */
+    /* Orange enclosures */
     .segment-intro, .segment-follow {
         background: #fff;
         border-radius: 14px;
@@ -58,25 +57,24 @@
         margin-left: auto;
         margin-right: auto;
     }
+    /* Big Black Enclosure - Now much wider and taller */
     .segment-big-chart-enclosure {
         background: #fff;
         border-radius: 18px;
         box-shadow: 0 2px 20px rgba(36,48,94,0.12);
         border: 4px solid #111;
-        margin-bottom: 2.5rem;
+        margin: 3rem auto 2.5rem auto;
         padding: 2.5rem 2rem 2.5rem;
         max-width: 1300px;
-        margin-left: auto;
-        margin-right: auto;
+        width: 95vw;
         min-width: 350px;
     }
     .chart-title-big {
-        font-size: 1.6rem;
+        font-size: 2rem;
         font-weight: 700;
         color: #222;
         margin-bottom: 1.5rem;
     }
-
     .chart-section {
         background: #f8f8f8;
         border-radius: 10px;
@@ -162,26 +160,27 @@
             Welcome to my portfolio of data visualizations. Here, I present a selection of charts that reflect my approach to turning raw data into meaningful stories. Each visualization is accompanied by a narrative that explains its context, purpose, and the insights it reveals.
         </p>
     </div>
-    <div class="container">
 
-        <!-- Segment 1: Telecom (custom enclosure layout) -->
+    <!-- Big Black enclosure OUTSIDE the .container, so it's much bigger -->
+    <div class="segment-big-chart-enclosure">
+        <div class="chart-title chart-title-big">Market Share of Indian Telcos (2023)</div>
+        <iframe 
+            src="https://ajententerprises.github.io/Aleef-s-Data-Portfolio/area_stacked%20copy%203.html"
+            style="width: 100%; height: 700px; border: none; display: block; margin: 0 auto; background: #fff;"
+            allowfullscreen
+            loading="lazy"
+            title="Market Share of Indian Telcos (2023)">
+        </iframe>
+    </div>
+
+    <div class="container">
+        <!-- Orange enclosure segment -->
         <section class="segment-intro">
             <div class="segment-title">India’s Telecom Story: Growth, Pricing and the 5G Shift</div>
             <div class="segment-desc">
                 This segment captures major trends shaping India’s telecom sector—from competitive dynamics and market consolidation to tariff changes and data usage growth driven by 5G. These charts explore how customer behavior and corporate strategy have evolved post-Jio's entry and in the wake of new technological rollouts.
             </div>
         </section>
-
-        <div class="segment-big-chart-enclosure">
-            <div class="chart-title chart-title-big">Market Share of Indian Telcos (2023)</div>
-            <iframe 
-                src="https://ajententerprises.github.io/Aleef-s-Data-Portfolio/area_stacked%20copy%203.html"
-                style="width:1200px; height:700px; border:none; display:block; margin:0 auto; background:#fff;"
-                allowfullscreen
-                loading="lazy"
-                title="Market Share of Indian Telcos (2023)">
-            </iframe>
-        </div>
 
         <section class="segment-follow">
             <div class="chart-section">
