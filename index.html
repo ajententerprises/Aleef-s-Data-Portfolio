@@ -41,7 +41,7 @@ header h1 {
     width: 98vw;
     min-width: 320px;
     margin: 1.2rem auto 1.2rem auto;
-    text-align: justify;
+    text-align: left; /* changed from 'justify' */
     font-family: 'Segoe UI', Arial, sans-serif;
     font-weight: 400;
     line-height: 1.5;
@@ -155,6 +155,17 @@ h2.segment-title {
     margin: 0 auto;
     background: #fff;
 }
+.chart-source {
+    font-family: "Roboto", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    color: #999;
+    font-weight: 400;
+    margin-top: 0.2em;
+    margin-left: 0.3em;
+    margin-bottom: -0.7em;
+    letter-spacing: 0.01em;
+    text-align: left;
+}
 .segment-explain {
     margin-top: 0;
     margin-bottom: 0.4rem;
@@ -180,7 +191,7 @@ h2, .segment-title, .segment-intro-title {
     line-height: 1.13;
 }
 h3, .chart-headline {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
     font-weight: 900;
     line-height: 1.1;
     color: #222;
@@ -301,16 +312,42 @@ h4 { font-size: 1.18rem; }
     </div>
 </section>
 
-<!-- 1st chart: Black border -->
+<!-- 1st chart (was 3rd, remains black) -->
 <div class="container no-bottom-margin">
     <section class="segment-explain border-black chart-intro">
-        <h3 class="chart-headline">Market Share of Indian Telcos</h3>
+        <h3 class="chart-headline">Mobile Data Usage After 5G Rollout</h3>
+        <div class="explain-body">
+            Lorem ipsum dolor sit amet, chart 3 gibberish goes here lorem ipsum dolor sit amet consectetur.
+        </div>
+    </section>
+</div>
+<div class="segment-big-chart-enclosure border-black">
+    <div class="chart-img-wrapper">
+        <img src="no_of_telcos-01-01-01.png" alt="Number of Private Telecom Operators in India">
+    </div>
+</div>
+<div class="container">
+    <section class="segment-explain border-black">
+        <div class="explain-body">
+            This chart shows quarterly mobile data consumption in India, highlighting the surge after the 5G launch. Jio and Airtel dominate data usage, reflecting customer uptake and expanding network coverage.
+        </div>
+        <div class="tools-used">
+            <span class="tools-used-title">TOOLS USED:</span><br>
+            Excel, Illustrator
+        </div>
+    </section>
+</div>
+
+<!-- 2nd chart (was 1st, now orange) -->
+<div class="container no-bottom-margin">
+    <section class="segment-explain border-orange chart-intro">
+        <h3 class="chart-headline">Market Share of Indian Telcos (2023)</h3>
         <div class="explain-body">
             Lorem ipsum dolor sit amet, chart 1 gibberish goes here lorem ipsum dolor sit amet consectetur.
         </div>
     </section>
 </div>
-<div class="segment-big-chart-enclosure border-black">
+<div class="segment-big-chart-enclosure border-orange">
     <!-- Chart 1 custom heading block, styled per screenshot -->
     <div class="chart-heading-block">
         <div class="chart1-heading">
@@ -332,10 +369,11 @@ h4 { font-size: 1.18rem; }
             title="Market Share of Indian Telcos (2023)">
         </iframe>
     </div>
+    <div class="chart-source">Source: Ambit Capital</div>
 </div>
 
 <div class="container">
-    <section class="segment-explain border-black">
+    <section class="segment-explain border-orange">
         <div class="explain-body">
             This area chart visualizes the shifting market share among India's major telecom operators since the Vodafone-Idea merger in 2018. It reveals how Jio and Airtel have steadily captured more subscribers, while Vodafone Idea (Vi) has seen a significant drop in its user base. The chart underscores the impact of aggressive pricing strategies, network investments, and industry consolidation on subscriber dynamics. Ultimately, it highlights the competitive pressures and consumer choices that continue to reshape India's telecom landscape.
         </div>
@@ -346,52 +384,28 @@ h4 { font-size: 1.18rem; }
     </section>
 </div>
 
+<!-- 3rd chart (was 2nd, now black) -->
 <div class="container no-bottom-margin">
-    <section class="segment-explain border-orange chart-intro">
+    <section class="segment-explain border-black chart-intro">
         <h3 class="chart-headline">Tariff Revisions by Telcos Over Time</h3>
         <div class="explain-body">
             Lorem ipsum dolor sit amet, chart 2 gibberish goes here lorem ipsum dolor sit amet consectetur.
         </div>
     </section>
 </div>
-<div class="segment-big-chart-enclosure border-orange">
+<div class="segment-big-chart-enclosure border-black">
     <div class="chart-img-wrapper">
         <img src="tariff_final_01.png" alt="Tariff Revisions by Telcos">
     </div>
 </div>
 <div class="container">
-    <section class="segment-explain border-orange">
+    <section class="segment-explain border-black">
         <div class="explain-body">
             This line graph tracks key tariff hikes by India’s major telcos since Jio’s market entry. It highlights three major rounds of price revisions that reset the baseline for ARPU (Average Revenue Per User) in the industry.
         </div>
         <div class="tools-used">
             <span class="tools-used-title">TOOLS USED:</span><br>
             Illustrator, Company Filings
-        </div>
-    </section>
-</div>
-
-<div class="container no-bottom-margin">
-    <section class="segment-explain border-black chart-intro">
-        <h3 class="chart-headline">Mobile Data Usage After 5G Rollout</h3>
-        <div class="explain-body">
-            Lorem ipsum dolor sit amet, chart 3 gibberish goes here lorem ipsum dolor sit amet consectetur.
-        </div>
-    </section>
-</div>
-<div class="segment-big-chart-enclosure border-black">
-    <div class="chart-img-wrapper">
-        <img src="telcos_data_usage_with_5g_rollout_01.png" alt="5G Data Usage Growth">
-    </div>
-</div>
-<div class="container">
-    <section class="segment-explain border-black">
-        <div class="explain-body">
-            This chart shows quarterly mobile data consumption in India, highlighting the surge after the 5G launch. Jio and Airtel dominate data usage, reflecting customer uptake and expanding network coverage.
-        </div>
-        <div class="tools-used">
-            <span class="tools-used-title">TOOLS USED:</span><br>
-            Excel, Illustrator
         </div>
     </section>
 </div>
