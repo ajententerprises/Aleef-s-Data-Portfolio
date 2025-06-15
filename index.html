@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>Aleef's Data Viz Portfolio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="favicon.png">
 <style>
 h1, h2, h3, h4, h5, h6,
 .segment-title,
@@ -301,23 +302,25 @@ h4 { font-size: 1.18rem; }
     <h1>Aleef's Data Viz Portfolio</h1>
 </header>
 <p class="intro-text">
-    Welcome to my portfolio of data visualizations. Here, I present a selection of charts that reflect my approach to turning raw data into meaningful stories. Each visualization is accompanied by a narrative that explains its context, purpose, and the insights it reveals.
-</p>
+   Built for this job application, this portfolio brings together graphic explanations made using <strong> Illustrator, Excel, Chart.js, </strong> and <strong> Flourish </strong>. It’s coded from scratch with basic <strong> HTML </strong> and <strong> CSS </strong> to keep things clean and functional. Telco mergers, rising digital ads, global vaccine rollouts — all charted and captioned here.</p>
 
 <!-- TELECOM SEGMENT -->
 <section class="segment-intro-highlight">
     <h2 class="segment-title">India’s Telecom Shake-Up</h2>
     <div class="segment-intro-desc">
-        This segment captures major trends shaping India’s telecom sector—from competitive dynamics and market consolidation to tariff changes and data usage growth driven by 5G. These charts explore how customer behavior and corporate strategy have evolved post-Jio's entry and in the wake of new technological rollouts.
+       India’s telecom sector has seen a dramatic shake-up — from over 10 private players in 2016 to just three today. Even before billionaire Mukesh Ambani-owned Jio’s entry, operators were struggling with high spectrum costs, mounting debt, and policy uncertainty.<br> 
+       <br>Jio’s arrival with free voice and dirt-cheap data tipped the balance. Unable to match its prices, many rivals shut shop or merged to survive. The result: a highly consolidated industry dominated by Jio, Airtel, and Vodafone Idea.
+
     </div>
 </section>
 
 <!-- 1st chart (was 3rd, remains black) -->
 <div class="container no-bottom-margin">
     <section class="segment-explain border-black chart-intro">
-        <h3 class="chart-headline">Mobile Data Usage After 5G Rollout</h3>
+        <h3 class="chart-headline">Shakeout — From 10 Players to 3</h3>
         <div class="explain-body">
-            Lorem ipsum dolor sit amet, chart 3 gibberish goes here lorem ipsum dolor sit amet consectetur.
+            India’s telecom sector was already under stress from costly spectrum auctions, heavy debt, and policy uncertainty when Jio entered in 2016 with free voice and ultra-cheap data. The resulting price war proved unsustainable for most operators. Some, like Telenor and MTS, merged into larger players; others, like Aircel and Videocon, shut down. 
+            <br><br>Even Vodafone and Idea, once major rivals, were forced to merge in 2018 to survive. A wave of exits and consolidations followed, leaving just three private players — Jio, Airtel, and Vodafone Idea — by 2020.
         </div>
     </section>
 </div>
@@ -329,11 +332,12 @@ h4 { font-size: 1.18rem; }
 <div class="container">
     <section class="segment-explain border-black">
         <div class="explain-body">
-            This chart shows quarterly mobile data consumption in India, highlighting the surge after the 5G launch. Jio and Airtel dominate data usage, reflecting customer uptake and expanding network coverage.
+           The chart shows how India’s telecom sector shrank from over 10 private operators in 2016 to just three by 2020. 
+           The data was compiled from company reports, cleaned in Excel, and visualized using Adobe Illustrator.
         </div>
         <div class="tools-used">
             <span class="tools-used-title">TOOLS USED:</span><br>
-            Excel, Illustrator
+            Microsoft Excel, Adobe Illustrator
         </div>
     </section>
 </div>
@@ -341,9 +345,12 @@ h4 { font-size: 1.18rem; }
 <!-- 2nd chart (was 1st, now orange) -->
 <div class="container no-bottom-margin">
     <section class="segment-explain border-orange chart-intro">
-        <h3 class="chart-headline">Market Share of Indian Telcos (2023)</h3>
+        <h3 class="chart-headline">How the Market Share Shifted</h3>
         <div class="explain-body">
-            Lorem ipsum dolor sit amet, chart 1 gibberish goes here lorem ipsum dolor sit amet consectetur.
+            As smaller players exited, the market narrowed to a three-way contest. Vodafone and Idea merged in 2018 to counter Jio’s rise, but the combined entity — Vodafone Idea (Vi) — has struggled ever since. 
+            <br><br>Saddled with massive debt and limited funds to upgrade its network, Vi has steadily lost users.<br>
+            <br>Meanwhile, Jio and Airtel have expanded their subscriber base, with Jio leading the market and Airtel closing in as a strong second.
+
         </div>
     </section>
 </div>
@@ -375,11 +382,13 @@ h4 { font-size: 1.18rem; }
 <div class="container">
     <section class="segment-explain border-orange">
         <div class="explain-body">
-            This area chart visualizes the shifting market share among India's major telecom operators since the Vodafone-Idea merger in 2018. It reveals how Jio and Airtel have steadily captured more subscribers, while Vodafone Idea (Vi) has seen a significant drop in its user base. The chart underscores the impact of aggressive pricing strategies, network investments, and industry consolidation on subscriber dynamics. Ultimately, it highlights the competitive pressures and consumer choices that continue to reshape India's telecom landscape.
+           The <strong> interactive chart </strong> tracks how the market share of Jio, Airtel, and Vodafone Idea evolved over time, using data sourced from Ambit Capital. 
+<br><br>
+Built using <strong> Chart.js</strong>, it includes <strong> interactive features</strong>: when you hover over any point on the timeline, <strong> a tooltip appears showing the subscriber base</strong> of all three operators for that particular quarter. This allows for a more detailed and intuitive exploration of trends across the years.
         </div>
         <div class="tools-used">
             <span class="tools-used-title">TOOLS USED:</span><br>
-            Chart.js, HTML, TRAI Data
+            Microsoft Excel, Chart.js, HTML
         </div>
     </section>
 </div>
@@ -387,9 +396,11 @@ h4 { font-size: 1.18rem; }
 <!-- 3rd chart (was 2nd, now black) -->
 <div class="container no-bottom-margin">
     <section class="segment-explain border-black chart-intro">
-        <h3 class="chart-headline">Tariff Revisions by Telcos Over Time</h3>
+        <h3 class="chart-headline">Price Hikes and Their Impact on ARPU</h3>
         <div class="explain-body">
-            Lorem ipsum dolor sit amet, chart 2 gibberish goes here lorem ipsum dolor sit amet consectetur.
+            India has long been one of the world’s lowest ARPU markets — a key factor behind the collapse of several telecom operators. Over the past six years, the surviving players have raised tariffs at three key intervals. 
+<br><br>
+Each hike was followed by a noticeable uptick in ARPU within a quarter or two. While these revisions have helped shore up revenues, India’s ARPU still trails global norms, suggesting more hikes may be on the horizon.
         </div>
     </section>
 </div>
@@ -401,29 +412,31 @@ h4 { font-size: 1.18rem; }
 <div class="container">
     <section class="segment-explain border-black">
         <div class="explain-body">
-            This line graph tracks key tariff hikes by India’s major telcos since Jio’s market entry. It highlights three major rounds of price revisions that reset the baseline for ARPU (Average Revenue Per User) in the industry.
-        </div>
+            This graphic illustrates how average revenue per user (ARPU) jumped following tariff hikes by telecom operators. The data, also from Ambit Capital, was prepared in Excel and designed in Illustrator.        </div>
         <div class="tools-used">
             <span class="tools-used-title">TOOLS USED:</span><br>
-            Illustrator, Company Filings
+            MIcrosoft Excel, Adobe Illustrator
         </div>
     </section>
 </div>
 
 <!-- Segment break / intro -->
 <section class="segment-intro-highlight">
-    <h2 class="segment-title">Advertising Revenue Trends</h2>
+    <h2 class="segment-title">Beyond Telecom: Media, Public Health</h2>
     <div class="segment-intro-desc">
-        This is a generic section introduction. Use this space to introduce the next set of charts, describe their focus, or provide any thematic transition for your data story. Replace this text with your own description when ready.
-    </div>
+        Not all trends unfold in the same lane. From changing advertiser priorities to the global rush for vaccines, the following charts spotlight how two very different sectors responded to disruption and urgency — one driven by market forces, the other by a global health crisis.    </div>
 </section>
 
 <!-- 4th chart: Orange border -->
 <div class="container no-bottom-margin">
     <section class="segment-explain border-orange chart-intro">
-        <h3 class="chart-headline">Digital grabs nearly 50% of India’s ad revenue pie</h3>
+        <h3 class="chart-headline">Digital Eats the Ad Pie</h3>
         <div class="explain-body">
-            Lorem ipsum dolor sit amet, chart 4 gibberish goes here lorem ipsum dolor sit amet consectetur.
+            India’s advertising landscape has been steadily tilting toward digital. Once dominated by traditional channels like print and television, the ad revenue pie is now being reshaped by the rise of the internet. 
+<br><br>
+As smartphone use surged and 4G/5G connectivity deepened, platforms like social media, online video, and search engines became advertisers’ preferred mediums. This shift has come at the expense of legacy formats — with newspapers and TV seeing their share shrink year after year. 
+<br><br>
+Digital’s growing dominance signals a fundamental change in how businesses reach consumers in a mobile-first economy.
         </div>
     </section>
 </div>
@@ -435,11 +448,10 @@ h4 { font-size: 1.18rem; }
 <div class="container">
     <section class="segment-explain border-orange">
         <div class="explain-body">
-            This bar chart compares ad revenue growth across India's major TV broadcasters from FY21 to FY23. Star and Zee show notable rebounds, signaling a return in advertiser confidence.
-        </div>
+            This chart captures the growing dominance of digital media in India’s ad market, as traditional platforms like print and TV lose share. <br><br>Data from Dentsu was processed in Excel and visualized in Illustrator.        </div>
         <div class="tools-used">
             <span class="tools-used-title">TOOLS USED:</span><br>
-            Excel, BARC India data
+            Microsoft Excel, Adobe Illustrator
         </div>
     </section>
 </div>
@@ -447,10 +459,9 @@ h4 { font-size: 1.18rem; }
 <!-- 5th chart: Black border -->
 <div class="container no-bottom-margin">
     <section class="segment-explain border-black chart-intro">
-        <h3 class="chart-headline">A Race Against Time—and Inequality</h3>
+        <h3 class="chart-headline">An Unequal Start to Vaccination</h3>
         <div class="explain-body">
-            Lorem ipsum dolor sit amet, chart 5 gibberish goes here lorem ipsum dolor sit amet consectetur.
-        </div>
+            Created in July 2021 for a COVID-19 story, this chart used WHO data to show how vaccination coverage varied widely across countries in the early rollout phase — reflecting gaps in access, infrastructure, and uptake.        </div>
     </section>
 </div>
 <div class="segment-big-chart-enclosure border-black">
@@ -466,11 +477,13 @@ h4 { font-size: 1.18rem; }
 <div class="container">
     <section class="segment-explain border-black">
         <div class="explain-body">
-            This animated bar chart race tracks the percentage of population fully vaccinated in various countries until July 2021. It highlights how high-income countries surged ahead early, leaving others behind. The widening gap reflects the systemic inequality in global health access.
+            This animated graphic shows the percentage of each country’s population vaccinated as of July 2021, during the early phase of the global rollout. 
+<br><br>
+Data was sourced from WHO, cleaned in Excel, and built in <strong> Flourish</strong>.
         </div>
         <div class="tools-used">
             <span class="tools-used-title">TOOLS USED:</span><br>
-            Flourish
+            Microsoft Excel, Flourish
         </div>
     </section>
 </div>
@@ -485,10 +498,10 @@ h4 { font-size: 1.18rem; }
     </button>
 </div>
 
-<!-- Footer -->
 <footer class="site-footer" id="footer">
-     Hand-built, broken and rebuilt with ❤️ by Aleef Jahan.<br>
-  Crafted using HTML and CSS.
+    Hand-built, broken, and rebuilt by Aleef Jahan via HTML and CSS 🛠️
+    <br>
+    View my other written works <a href="https://aleefjahan.wixsite.com/website/work">here</a> ✅
 </footer>
 
 <script>
