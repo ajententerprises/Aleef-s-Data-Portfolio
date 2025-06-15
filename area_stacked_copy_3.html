@@ -19,7 +19,6 @@
       margin: 0 auto;
       background: #fff;
       border-radius: 14px;
-      /* Faint, subtle border like your screenshot */
       border: 1.5px solid rgba(0,0,0,0.06);
       box-shadow: none;
       position: relative;
@@ -53,6 +52,21 @@
     .label.jio   { top: 36%; }
     .label.voda  { top: 68%; }
     .label.airtel{ top: 85%; }
+    /* Source label styling, smaller font */
+    .source-label {
+      position: absolute;
+      left: 18px;
+      bottom: -34px;
+      font-family: "Roboto", "Helvetica Neue", Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      color: #999;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      background: none;
+      pointer-events: none;
+      user-select: none;
+      text-align: left;
+    }
   </style>
 </head>
 <body>
@@ -61,6 +75,7 @@
     <div class="label jio">Jio</div>
     <div class="label voda">Vodafone Idea</div>
     <div class="label airtel">Airtel</div>
+    <div class="source-label">Source: Ambit Capital</div>
   </div>
   <script>
     const labels = [
