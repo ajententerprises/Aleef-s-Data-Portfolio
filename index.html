@@ -302,10 +302,8 @@ h4 { font-size: 1.18rem; }
     <h1>Aleef's Data Viz Portfolio</h1>
 </header>
 <p class="intro-text">
-
-  Built specifically for this job application, this portfolio brings together graphic explanations made using <strong>Illustrator</strong>, <strong>Excel</strong>, <strong>Chart.js</strong>, and <strong>Flourish</strong>. The site itself was <strong>custom-coded</strong> from scratch using <strong>HTML</strong> and <strong>CSS</strong> to keep things clean and functional. <br><br>All files were versioned and hosted via <strong>GitHub Pages</strong>. Telco mergers, rising digital ads, global vaccine rollouts—each section features <strong>original charts</strong> paired with short explainers.
-    
-   </p>
+   Hello and welcome! Built specifically for this job application, this portfolio brings together graphic explanations made using <strong>Illustrator</strong>, <strong>Excel</strong>, <strong>Chart.js</strong>, <strong>QGIS</strong>, and <strong>Flourish</strong>. The site itself was <strong>custom-coded</strong> from scratch using <strong>HTML</strong> and <strong>CSS</strong> to keep things clean and functional. <br><br>All files were versioned and hosted via <strong>GitHub Pages</strong>. Telco mergers, remittances, rising digital ads, global vaccine rollouts—each section features <strong>original charts</strong> paired with short explainers.
+</p>
 
 <!-- TELECOM SEGMENT -->
 <section class="segment-intro-highlight">
@@ -387,7 +385,7 @@ h4 { font-size: 1.18rem; }
         <div class="explain-body">
            The <strong> interactive chart </strong> tracks how the market share of Jio, Airtel, and Vodafone Idea evolved over time, using data sourced from Ambit Capital. 
 <br><br>
-Built using <strong> Chart.js</strong>, it includes <strong> interactive features</strong>: when you hover over any point on the timeline, <strong> a tooltip appears showing the subscriber base</strong> of all three operators for that particular quarter. This allows for a more detailed and intuitive exploration of trends across the years.
+Built using <strong>Chart.js</strong>, it includes <strong>interactive features</strong>: when you hover over any point on the timeline, <strong>a tooltip appears showing the subscriber base</strong> of all three operators for that particular quarter. This allows for a more detailed and intuitive exploration of trends across the years.
         </div>
         <div class="tools-used">
             <span class="tools-used-title">TOOLS USED:</span><br>
@@ -418,21 +416,47 @@ Each hike was followed by a noticeable uptick in ARPU within a quarter or two. W
             This graphic illustrates how average revenue per user (ARPU) jumped following tariff hikes by telecom operators. The data, also from Ambit Capital, was prepared in Excel and designed in Illustrator.        </div>
         <div class="tools-used">
             <span class="tools-used-title">TOOLS USED:</span><br>
-            MIcrosoft Excel, Adobe Illustrator
+            Microsoft Excel, Adobe Illustrator
         </div>
     </section>
 </div>
 
-<!-- Segment break / intro -->
 <section class="segment-intro-highlight">
-    <h2 class="segment-title">Beyond Telecom: Media, Public Health</h2>
+    <h2 class="segment-title">Beyond Telecom: Remittances, Media, Public Health</h2>
     <div class="segment-intro-desc">
-        Not all trends unfold in the same lane. From changing advertiser priorities to the global rush for vaccines, the following charts spotlight how two very different sectors responded to disruption and urgency — one driven by market forces, the other by a global health crisis.    </div>
+        Not all trends unfold in the same lane. From the lifeline of overseas remittances in Kerala, to changing advertiser priorities, to the global rush for vaccines, the following charts spotlight how three very different sectors responded to disruption and urgency — one powered by migrant earnings, another by the digital economy, and the last by a global health crisis.
+    </div>
 </section>
-
-<!-- 4th chart: Orange border -->
+<!-- Kerala Remittance section: ORANGE -->
 <div class="container no-bottom-margin">
-    <section class="segment-explain border-orange chart-intro">
+  <section class="segment-explain border-orange chart-intro">
+    <h3 class="chart-headline">Kerala’s Remittance Economy</h3>
+    <div class="explain-body">
+      This map visualizes how international remittances varied across districts in the southern Indian state of Kerala in 2023, using data from the Kerala Migration Survey. Money sent home by Keralites working abroad remains a critical source of household income — with certain districts receiving far more than others.<br><br>
+Migration is woven into Kerala’s social fabric. In some districts, nearly half of all households have a family member working overseas, mostly in the Gulf. Remittances accounted for over 23% of the state's GDP, and Kerala continues to attract more than one-fifth of all overseas bank deposits into India. In 2023, the coastal district of Kollam surpassed Malappuram to receive the highest remittance inflows per household.
+    </div>
+  </section>
+</div>
+<div class="segment-big-chart-enclosure border-orange">
+  <div class="chart-img-wrapper">
+    <img src="kerala_remittance.png" alt="Kerala Remittance Inflows">
+  </div>
+</div>
+<div class="container">
+  <section class="segment-explain border-orange">
+    <div class="explain-body">
+      The map was created using <strong>QGIS</strong> by first cleaning the remittance dataset in Excel, then joining it to a Kerala district shapefile, styling it as a <strong>choropleth</strong>, and exporting the final layout as a high-resolution PNG.
+    </div>
+    <div class="tools-used">
+      <span class="tools-used-title">TOOLS USED:</span><br>
+      QGIS, Excel
+    </div>
+  </section>
+</div>
+
+<!-- Media section: BLACK -->
+<div class="container no-bottom-margin">
+    <section class="segment-explain border-black chart-intro">
         <h3 class="chart-headline">Digital Eats the Ad Pie</h3>
         <div class="explain-body">
             India’s advertising landscape has been steadily tilting toward digital. Once dominated by traditional channels like print and television, the ad revenue pie is now being reshaped by the rise of the internet. 
@@ -443,13 +467,13 @@ Digital’s growing dominance signals a fundamental change in how businesses rea
         </div>
     </section>
 </div>
-<div class="segment-big-chart-enclosure border-orange">
+<div class="segment-big-chart-enclosure border-black">
     <div class="chart-img-wrapper">
         <img src="ad_rev_01.png" alt="TV Ad Revenue Growth">
     </div>
 </div>
 <div class="container">
-    <section class="segment-explain border-orange">
+    <section class="segment-explain border-black">
         <div class="explain-body">
             This chart captures the growing dominance of digital media in India’s ad market, as traditional platforms like print and TV lose share. <br><br>Data from Dentsu was processed in Excel and visualized in Illustrator.        </div>
         <div class="tools-used">
@@ -459,15 +483,15 @@ Digital’s growing dominance signals a fundamental change in how businesses rea
     </section>
 </div>
 
-<!-- 5th chart: Black border -->
+<!-- Vaccination section: ORANGE -->
 <div class="container no-bottom-margin">
-    <section class="segment-explain border-black chart-intro">
+    <section class="segment-explain border-orange chart-intro">
         <h3 class="chart-headline">An Unequal Start to Vaccination</h3>
         <div class="explain-body">
             Created in July 2021 for a COVID-19 story, this chart used data from Our World in Data to show how vaccination coverage varied widely across countries in the early rollout phase — reflecting gaps in access, infrastructure, and uptake.        </div>
     </section>
 </div>
-<div class="segment-big-chart-enclosure border-black">
+<div class="segment-big-chart-enclosure border-orange">
     <div class="chart-img-wrapper">
         <div class="flourish-embed flourish-bar-chart-race" data-src="visualisation/6689841">
             <script src="https://public.flourish.studio/resources/embed.js"></script>
@@ -478,11 +502,11 @@ Digital’s growing dominance signals a fundamental change in how businesses rea
     </div>
 </div>
 <div class="container">
-    <section class="segment-explain border-black">
+    <section class="segment-explain border-orange">
         <div class="explain-body">
             This animated graphic shows the percentage of each country’s population vaccinated as of July 2021, during the early phase of the global rollout. 
 <br><br>
-Data was sourced from Our World in Data, cleaned in Excel, and built in <strong> Flourish</strong>.
+Data was sourced from Our World in Data, cleaned in Excel, and built in <strong>Flourish</strong>.
         </div>
         <div class="tools-used">
             <span class="tools-used-title">TOOLS USED:</span><br>
